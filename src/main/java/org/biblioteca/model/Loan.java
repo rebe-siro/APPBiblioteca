@@ -10,10 +10,12 @@ import java.util.Date;
  */
 public class Loan {
     private int code;
+    //private int codeUser;
     private String user;
     private Date star_Date;
     private Date end_Date;
     private boolean status;
+    private String userRegister;
 
     public Loan(int code, String user, Date star_Date, Date end_Date, boolean status) {
         this.code = code;

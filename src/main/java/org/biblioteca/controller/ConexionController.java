@@ -27,7 +27,7 @@ public class ConexionController {
 
     public List<String> obtenerDatos() {
         List<String> lista = new ArrayList<>();
-        String sql = "SELECT description FROM recurso" ; 
+        String sql = "SELECT description FROM recurso where status = true" ; 
 
         try (Connection con = conexionDB.getConexion();
              PreparedStatement ps = con.prepareStatement(sql);

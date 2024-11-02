@@ -98,7 +98,7 @@ public class ConsultasRecurso extends Conexion {
         ResultSet rs = null;
         Connection con = getConexion();
 
-        String sql = "SELECT * FROM recurso WHERE code=? ";
+        String sql = "SELECT * FROM recurso WHERE code = ? ";
 
         try {
             ps = con.prepareStatement(sql);

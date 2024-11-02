@@ -5,18 +5,15 @@
 package org.biblioteca.model;
 
 /**
- *
- * @author Rebe
+ * Deteails of Loan
+ * @author 
  */
 public class LoanResources {
      private int code;
+     private int codeResource;
      private String description;
-     private boolean status;
 
-    public LoanResources(int code, String description, boolean status) {
-        this.code = code;
-        this.description = description;
-        this.status = status;
+    public LoanResources() {
     }
 
     public int getCode() {
@@ -27,20 +24,20 @@ public class LoanResources {
         this.code = code;
     }
 
+    public int getCodeResource() {
+        return codeResource;
+    }
+
+    public void setCodeResource(int codeResource) {
+        this.codeResource = codeResource;
+    }
+
     public String getDescription() {
         return description;
     }
 
     public void setDescription(String description) {
         this.description = description;
-    }
-
-    public boolean isStatus() {
-        return status;
-    }
-
-    public void setStatus(boolean status) {
-        this.status = status;
     }
 
 

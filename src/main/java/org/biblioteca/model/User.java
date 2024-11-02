@@ -10,16 +10,17 @@ package org.biblioteca.model;
  */
 public class User {
     private int code;
+    //Login
     private String name;
-    private int id;
+    private String identification;
     private int career;
     private int type;
     private boolean status;
 
-    public User(int code, String name, int id, int career, int type, boolean status) {
+    public User(int code, String name, String identification, int career, int type, boolean status) {
         this.code = code;
         this.name = name;
-        this.id = id;
+        this.identification = identification;
         this.career = career;
         this.type = type;
         this.status = status;
@@ -41,12 +42,12 @@ public class User {
         this.name = name;
     }
 
-    public int getId() {
-        return id;
+    public String getIdentification() {
+        return identification;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public void setIdentification(String identification) {
+        this.identification = identification;
     }
 
     public int getCareer() {
@@ -72,5 +73,7 @@ public class User {
     public void setStatus(boolean status) {
         this.status = status;
     }
+
+
 
 }
