@@ -1,4 +1,4 @@
-/*
+    /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
@@ -10,6 +10,10 @@ import org.biblioteca.controller.ResourcesController;
 import org.biblioteca.model.ConsultasRecurso;
 import org.biblioteca.model.Resources;
 import org.biblioteca.model.Loan;
+import org.biblioteca.model.User;
+import org.biblioteca.view.RegisterUser;
+import org.biblioteca.controller.UserController;
+import org.biblioteca.model.UserConsults;
 import org.biblioteca.model.LoanResources;
 /**
  *
@@ -36,6 +40,7 @@ public class MainPage extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         jButtonBiblioteca = new javax.swing.JButton();
         jButtonPrestamo = new javax.swing.JButton();
+        userRegister = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -65,25 +70,41 @@ public class MainPage extends javax.swing.JFrame {
             }
         });
 
+        userRegister.setFont(new java.awt.Font("Segoe UI", 1, 48)); // NOI18N
+        userRegister.setText("Registrar Usuario");
+        userRegister.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                userRegisterMouseClicked(evt);
+            }
+        });
+        userRegister.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                userRegisterActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addGap(95, 95, 95)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jButtonBiblioteca, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jButtonPrestamo, javax.swing.GroupLayout.DEFAULT_SIZE, 530, Short.MAX_VALUE))
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(userRegister, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jButtonBiblioteca, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jButtonPrestamo, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 530, Short.MAX_VALUE))
                 .addGap(95, 95, 95))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addGap(61, 61, 61)
-                .addComponent(jButtonBiblioteca, javax.swing.GroupLayout.DEFAULT_SIZE, 150, Short.MAX_VALUE)
-                .addGap(59, 59, 59)
-                .addComponent(jButtonPrestamo, javax.swing.GroupLayout.DEFAULT_SIZE, 150, Short.MAX_VALUE)
-                .addGap(60, 60, 60))
+                .addComponent(jButtonBiblioteca, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(userRegister, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(jButtonPrestamo, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(60, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -124,8 +145,20 @@ public class MainPage extends javax.swing.JFrame {
         LoanResources modelLoanReso = new LoanResources();
         ConsultasRecurso querys = new ConsultasRecurso();
         LoanController loanController = new LoanController(model,modelLoan,modelLoanReso,querys,view);        
-        view.setVisible(true);        
+        view.setVisible(true); 
     }//GEN-LAST:event_jButtonPrestamoMouseClicked
+
+    private void userRegisterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_userRegisterActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_userRegisterActionPerformed
+
+    private void userRegisterMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_userRegisterMouseClicked
+        RegisterUser view = new RegisterUser();
+        User model = new User();
+        UserConsults querys = new UserConsults();
+        UserController user = new UserController(model, querys, view);
+        view.setVisible(true);
+    }//GEN-LAST:event_userRegisterMouseClicked
 
     /**
      * @param args the command line arguments
@@ -134,6 +167,7 @@ public class MainPage extends javax.swing.JFrame {
     private javax.swing.JButton jButtonBiblioteca;
     private javax.swing.JButton jButtonPrestamo;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JButton userRegister;
     // End of variables declaration//GEN-END:variables
 
 public JButton getjButtonBiblioteca() {

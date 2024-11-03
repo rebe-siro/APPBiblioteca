@@ -38,6 +38,7 @@ public class LoanController implements ActionListener{
         this.querys = querys;
         this.view = view;
         this.view.ButtonLoan.addActionListener((ActionListener) this);
+        this.view.ButtonLoan.setEnabled(false);
         start();
         //this.view.ButtomLoan.addActionListener(this);
     }
@@ -91,13 +92,13 @@ public class LoanController implements ActionListener{
         }
     }
 
-        public void configurarCheckBoxYBoton() { 
-            view.getNoteCheckBox().addActionListener(e -> {
-            if (view.getNoteCheckBox().isSelected()) { 
-                view.getButtonLoan().setEnabled(true);
-            } else {
-                view.getButtonLoan().setEnabled(false);
-            }
+    public void configurarCheckBoxYBoton() { 
+        view.getNoteCheckBox().addActionListener(e -> {
+        if (view.getNoteCheckBox().isSelected()) { 
+            view.getButtonLoan().setEnabled(true);
+        } else {
+           view.getButtonLoan().setEnabled(false);
+        }
         });
     }
 }

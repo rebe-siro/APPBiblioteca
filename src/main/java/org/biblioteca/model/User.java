@@ -12,18 +12,24 @@ public class User {
     private int code;
     //Login
     private String name;
+    private String lastName;
     private String identification;
     private int career;
     private int type;
     private boolean status;
 
-    public User(int code, String name, String identification, int career, int type, boolean status) {
+    public User(int code, String name, String lastName, String identification, int career, int type, boolean status) {
         this.code = code;
         this.name = name;
+        this.lastName = lastName;
         this.identification = identification;
         this.career = career;
         this.type = type;
         this.status = status;
+    }
+
+    public User() {
+       
     }
 
     public int getCode() {
@@ -40,6 +46,14 @@ public class User {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public String getLastName() {
+        return lastName;
+    }
+
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
     }
 
     public String getIdentification() {
@@ -74,6 +88,7 @@ public class User {
         this.status = status;
     }
 
+  
 
-
+   
 }
