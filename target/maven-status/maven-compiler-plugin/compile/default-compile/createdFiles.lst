@@ -11,6 +11,7 @@ org\biblioteca\view\ResourcesManager$1.class
 org\biblioteca\model\ResourcesLibrary.class
 org\biblioteca\controller\MainPageController$1.class
 org\biblioteca\view\LoginScreen$1.class
+org\biblioteca\view\ResourcesManager$4.class
 org\biblioteca\view\LoginScreen.class
 org\biblioteca\model\User.class
 org\biblioteca\view\LoanView$1.class
@@ -35,6 +36,8 @@ org\biblioteca\view\LoanView$3.class
 org\biblioteca\view\MainPage$1.class
 org\biblioteca\view\LoanView.class
 org\biblioteca\controller\LoginScreenController.class
+org\biblioteca\view\LoanView$5.class
+org\biblioteca\view\ResourcesManager$5.class
 org\biblioteca\view\ResourcesManager$3.class
 org\biblioteca\controller\DataTable.class
 org\biblioteca\model\LoanResources.class
