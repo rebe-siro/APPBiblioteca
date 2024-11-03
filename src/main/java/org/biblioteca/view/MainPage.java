@@ -10,6 +10,7 @@ import org.biblioteca.controller.ResourcesController;
 import org.biblioteca.model.ConsultasRecurso;
 import org.biblioteca.model.Resources;
 import org.biblioteca.model.Loan;
+import org.biblioteca.model.LoanResources;
 /**
  *
  * @author Luzzio
@@ -120,8 +121,9 @@ public class MainPage extends javax.swing.JFrame {
         LoanView view = new LoanView();
         Resources model = new Resources();
         Loan modelLoan = new Loan();
+        LoanResources modelLoanReso = new LoanResources();
         ConsultasRecurso querys = new ConsultasRecurso();
-        LoanController loanController = new LoanController(model,modelLoan,querys,view);        
+        LoanController loanController = new LoanController(model,modelLoan,modelLoanReso,querys,view);        
         view.setVisible(true);        
     }//GEN-LAST:event_jButtonPrestamoMouseClicked
 

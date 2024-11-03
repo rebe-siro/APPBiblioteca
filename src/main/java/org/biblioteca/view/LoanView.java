@@ -44,9 +44,10 @@ public class LoanView extends javax.swing.JFrame {
         LabelReturnDate = new javax.swing.JLabel();
         NoteCheckBox = new javax.swing.JCheckBox();
         LabelNote = new javax.swing.JLabel();
-        ButtomLoan = new javax.swing.JButton();
+        ButtonLoan = new javax.swing.JButton();
         ButtomCancel = new javax.swing.JButton();
         jToolBar1 = new javax.swing.JToolBar();
+        jButtonBack = new javax.swing.JButton();
         LabelLoanTittle = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTableResources = new javax.swing.JTable();
@@ -54,11 +55,14 @@ public class LoanView extends javax.swing.JFrame {
         jTextFieldStarDate = new javax.swing.JTextField();
         jTextFieldEndDate = new javax.swing.JTextField();
         jComboBoxUserType = new javax.swing.JComboBox<>();
-        jComboBoxUserRegister = new javax.swing.JComboBox<>();
+        LabelLoanDate1 = new javax.swing.JLabel();
+        LabelLoanDate2 = new javax.swing.JLabel();
+        LabelLoanDate3 = new javax.swing.JLabel();
+        jTextFieldUserRegister = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        LabelLoanDate.setText("Fecha del Prestamo");
+        LabelLoanDate.setText("Nombre del usuario");
 
         LabelReturnDate.setText("Fecha de Devolucion");
 
@@ -71,10 +75,10 @@ public class LoanView extends javax.swing.JFrame {
 
         LabelNote.setText("DE NO DEVOLVER EL RECURSO, SE LE APLICARA UNA SANCION.");
 
-        ButtomLoan.setText("Solicitar Prestamo");
-        ButtomLoan.addActionListener(new java.awt.event.ActionListener() {
+        ButtonLoan.setText("Solicitar Prestamo");
+        ButtonLoan.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                ButtomLoanActionPerformed(evt);
+                ButtonLoanActionPerformed(evt);
             }
         });
 
@@ -92,6 +96,18 @@ public class LoanView extends javax.swing.JFrame {
 
         jToolBar1.setRollover(true);
 
+        jButtonBack.setText("REGRESAR");
+        jButtonBack.setFocusable(false);
+        jButtonBack.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jButtonBack.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        jButtonBack.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonBackActionPerformed(evt);
+            }
+        });
+        jToolBar1.add(jButtonBack);
+
+        LabelLoanTittle.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         LabelLoanTittle.setText("Seleccione el Recurso");
 
         jTableResources.setModel(new javax.swing.table.DefaultTableModel(
@@ -107,86 +123,93 @@ public class LoanView extends javax.swing.JFrame {
         ));
         jScrollPane1.setViewportView(jTableResources);
 
-        jTextFieldUserName.setText("Nombre usuario");
+        jComboBoxUserType.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccione", "Estudiante", "Profesor", "Externo" }));
 
-        jTextFieldStarDate.setText("Fecha inicio");
+        LabelLoanDate1.setText("Tipo de usuario");
 
-        jTextFieldEndDate.setText("Fecha de entrega");
+        LabelLoanDate2.setText("Fecha del Prestamo");
 
-        jComboBoxUserType.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-
-        jComboBoxUserRegister.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        LabelLoanDate3.setText("Usuario registrador");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jToolBar1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(398, 398, 398)
-                .addComponent(LabelLoanDate)
-                .addGap(0, 0, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(LabelReturnDate)
-                .addGap(409, 409, 409))
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(31, 31, 31)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(NoteCheckBox)
                             .addGroup(layout.createSequentialGroup()
+                                .addGap(31, 31, 31)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(LabelLoanTittle)
-                                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 597, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(26, 26, 26)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jTextFieldStarDate, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jTextFieldEndDate, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jComboBoxUserRegister, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jTextFieldUserName, javax.swing.GroupLayout.PREFERRED_SIZE, 172, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jComboBoxUserType, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                                    .addComponent(NoteCheckBox)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(LabelLoanTittle)
+                                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 597, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addGap(18, 18, 18)
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                            .addComponent(LabelLoanDate)
+                                            .addComponent(jTextFieldUserName)
+                                            .addComponent(LabelLoanDate1)
+                                            .addComponent(LabelLoanDate2)
+                                            .addComponent(jComboBoxUserType, 0, 190, Short.MAX_VALUE)
+                                            .addComponent(jTextFieldStarDate)
+                                            .addComponent(LabelReturnDate)
+                                            .addComponent(jTextFieldEndDate)
+                                            .addComponent(LabelLoanDate3)
+                                            .addComponent(jTextFieldUserRegister)))))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(84, 84, 84)
+                                .addComponent(ButtonLoan, javax.swing.GroupLayout.PREFERRED_SIZE, 269, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(88, 88, 88)
+                                .addComponent(ButtomCancel, javax.swing.GroupLayout.PREFERRED_SIZE, 288, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(63, 63, 63)
+                                .addComponent(LabelNote)))
+                        .addGap(0, 88, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(84, 84, 84)
-                        .addComponent(ButtomLoan, javax.swing.GroupLayout.PREFERRED_SIZE, 269, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(88, 88, 88)
-                        .addComponent(ButtomCancel, javax.swing.GroupLayout.PREFERRED_SIZE, 288, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(63, 63, 63)
-                        .addComponent(LabelNote)))
-                .addContainerGap(90, Short.MAX_VALUE))
+                        .addContainerGap()
+                        .addComponent(jToolBar1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(jToolBar1, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
+                .addComponent(jToolBar1, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(LabelLoanTittle)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(jTextFieldUserName, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 448, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(LabelLoanDate, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jTextFieldUserName, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(23, 23, 23)
+                        .addComponent(LabelLoanDate1, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jComboBoxUserType, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
-                        .addComponent(jComboBoxUserType, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(LabelLoanDate2, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jTextFieldStarDate, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
-                        .addComponent(jTextFieldStarDate, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(LabelReturnDate, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jTextFieldEndDate, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
-                        .addComponent(jTextFieldEndDate, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(30, 30, 30)
-                        .addComponent(jComboBoxUserRegister, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(18, 18, 18)
-                .addComponent(LabelLoanDate, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(LabelReturnDate, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 26, Short.MAX_VALUE)
+                        .addComponent(LabelLoanDate3, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jTextFieldUserRegister, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 68, Short.MAX_VALUE)
                 .addComponent(NoteCheckBox)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(LabelNote)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(ButtomLoan, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(ButtonLoan, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(ButtomCancel, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(22, 22, 22))
         );
@@ -198,9 +221,9 @@ public class LoanView extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_NoteCheckBoxActionPerformed
 
-    private void ButtomLoanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtomLoanActionPerformed
+    private void ButtonLoanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonLoanActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_ButtomLoanActionPerformed
+    }//GEN-LAST:event_ButtonLoanActionPerformed
 
     private void ButtomCancelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtomCancelActionPerformed
         // TODO add your handling code here:
@@ -210,25 +233,33 @@ public class LoanView extends javax.swing.JFrame {
     dispose();        // TODO add your handling code here:
     }//GEN-LAST:event_ButtomCancelMouseClicked
 
+    private void jButtonBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonBackActionPerformed
+    dispose();         // TODO add your handling code here:
+    }//GEN-LAST:event_jButtonBackActionPerformed
+
     /**
      * @param args the command line arguments
      */
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton ButtomCancel;
-    public javax.swing.JButton ButtomLoan;
+    public javax.swing.JButton ButtonLoan;
     private javax.swing.JLabel LabelLoanDate;
+    private javax.swing.JLabel LabelLoanDate1;
+    private javax.swing.JLabel LabelLoanDate2;
+    private javax.swing.JLabel LabelLoanDate3;
     private javax.swing.JLabel LabelLoanTittle;
     private javax.swing.JLabel LabelNote;
     private javax.swing.JLabel LabelReturnDate;
     public javax.swing.JCheckBox NoteCheckBox;
-    private javax.swing.JComboBox<String> jComboBoxUserRegister;
+    private javax.swing.JButton jButtonBack;
     private javax.swing.JComboBox<String> jComboBoxUserType;
     private javax.swing.JScrollPane jScrollPane1;
     public javax.swing.JTable jTableResources;
     public javax.swing.JTextField jTextFieldEndDate;
     public javax.swing.JTextField jTextFieldStarDate;
     public javax.swing.JTextField jTextFieldUserName;
+    public javax.swing.JTextField jTextFieldUserRegister;
     private javax.swing.JToolBar jToolBar1;
     // End of variables declaration//GEN-END:variables
    

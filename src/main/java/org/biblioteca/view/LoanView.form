@@ -23,86 +23,96 @@
   <Layout>
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Component id="jToolBar1" alignment="0" max="32767" attributes="0"/>
-          <Group type="102" alignment="0" attributes="0">
-              <EmptySpace min="-2" pref="398" max="-2" attributes="0"/>
-              <Component id="LabelLoanDate" min="-2" max="-2" attributes="0"/>
-              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-          </Group>
-          <Group type="102" alignment="1" attributes="0">
-              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-              <Component id="LabelReturnDate" min="-2" max="-2" attributes="0"/>
-              <EmptySpace min="-2" pref="409" max="-2" attributes="0"/>
-          </Group>
           <Group type="102" attributes="0">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace min="-2" pref="31" max="-2" attributes="0"/>
+                  <Group type="102" attributes="0">
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="NoteCheckBox" alignment="0" min="-2" max="-2" attributes="0"/>
                           <Group type="102" alignment="0" attributes="0">
+                              <EmptySpace min="-2" pref="31" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="LabelLoanTittle" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jScrollPane1" alignment="0" min="-2" pref="597" max="-2" attributes="0"/>
-                              </Group>
-                              <EmptySpace min="26" pref="26" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="jTextFieldStarDate" min="-2" pref="190" max="-2" attributes="0"/>
-                                  <Component id="jTextFieldEndDate" min="-2" pref="190" max="-2" attributes="0"/>
-                                  <Component id="jComboBoxUserRegister" min="-2" pref="190" max="-2" attributes="0"/>
-                                  <Component id="jTextFieldUserName" min="-2" pref="172" max="-2" attributes="0"/>
-                                  <Component id="jComboBoxUserType" min="-2" pref="190" max="-2" attributes="0"/>
+                                  <Component id="NoteCheckBox" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <Group type="103" groupAlignment="0" attributes="0">
+                                          <Component id="LabelLoanTittle" alignment="0" min="-2" max="-2" attributes="0"/>
+                                          <Component id="jScrollPane1" alignment="0" min="-2" pref="597" max="-2" attributes="0"/>
+                                      </Group>
+                                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                          <Component id="LabelLoanDate" min="-2" max="-2" attributes="0"/>
+                                          <Component id="jTextFieldUserName" max="32767" attributes="0"/>
+                                          <Component id="LabelLoanDate1" min="-2" max="-2" attributes="0"/>
+                                          <Component id="LabelLoanDate2" min="-2" max="-2" attributes="0"/>
+                                          <Component id="jComboBoxUserType" alignment="0" pref="190" max="32767" attributes="0"/>
+                                          <Component id="jTextFieldStarDate" alignment="0" max="32767" attributes="0"/>
+                                          <Component id="LabelReturnDate" alignment="0" min="-2" max="-2" attributes="0"/>
+                                          <Component id="jTextFieldEndDate" alignment="0" max="32767" attributes="0"/>
+                                          <Component id="LabelLoanDate3" alignment="0" min="-2" max="-2" attributes="0"/>
+                                          <Component id="jTextFieldUserRegister" max="32767" attributes="0"/>
+                                      </Group>
+                                  </Group>
                               </Group>
                           </Group>
+                          <Group type="102" alignment="0" attributes="0">
+                              <EmptySpace min="-2" pref="84" max="-2" attributes="0"/>
+                              <Component id="ButtonLoan" min="-2" pref="269" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="88" max="-2" attributes="0"/>
+                              <Component id="ButtomCancel" min="-2" pref="288" max="-2" attributes="0"/>
+                          </Group>
+                          <Group type="102" alignment="0" attributes="0">
+                              <EmptySpace min="-2" pref="63" max="-2" attributes="0"/>
+                              <Component id="LabelNote" min="-2" max="-2" attributes="0"/>
+                          </Group>
                       </Group>
+                      <EmptySpace min="0" pref="88" max="32767" attributes="0"/>
                   </Group>
                   <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace min="-2" pref="84" max="-2" attributes="0"/>
-                      <Component id="ButtomLoan" min="-2" pref="269" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="88" max="-2" attributes="0"/>
-                      <Component id="ButtomCancel" min="-2" pref="288" max="-2" attributes="0"/>
-                  </Group>
-                  <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace min="-2" pref="63" max="-2" attributes="0"/>
-                      <Component id="LabelNote" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="jToolBar1" max="32767" attributes="0"/>
                   </Group>
               </Group>
-              <EmptySpace pref="90" max="32767" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="0" attributes="0">
+              <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
               <Component id="jToolBar1" min="-2" pref="25" max="-2" attributes="0"/>
-              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
               <Component id="LabelLoanTittle" min="-2" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="jScrollPane1" min="-2" max="-2" attributes="0"/>
-                  <Group type="102" alignment="1" attributes="0">
-                      <Component id="jTextFieldUserName" min="-2" pref="42" max="-2" attributes="0"/>
+                  <Component id="jScrollPane1" min="-2" pref="448" max="-2" attributes="0"/>
+                  <Group type="102" attributes="0">
+                      <Component id="LabelLoanDate" min="-2" pref="24" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="jTextFieldUserName" min="-2" pref="48" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="23" max="-2" attributes="0"/>
+                      <Component id="LabelLoanDate1" min="-2" pref="24" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="jComboBoxUserType" min="-2" pref="43" max="-2" attributes="0"/>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Component id="jComboBoxUserType" min="-2" pref="50" max="-2" attributes="0"/>
+                      <Component id="LabelLoanDate2" min="-2" pref="24" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="jTextFieldStarDate" min="-2" pref="43" max="-2" attributes="0"/>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Component id="jTextFieldStarDate" min="-2" pref="51" max="-2" attributes="0"/>
+                      <Component id="LabelReturnDate" min="-2" pref="24" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="jTextFieldEndDate" min="-2" pref="45" max="-2" attributes="0"/>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Component id="jTextFieldEndDate" min="-2" pref="49" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
-                      <Component id="jComboBoxUserRegister" min="-2" pref="47" max="-2" attributes="0"/>
+                      <Component id="LabelLoanDate3" min="-2" pref="24" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="jTextFieldUserRegister" min="-2" pref="44" max="-2" attributes="0"/>
                   </Group>
               </Group>
-              <EmptySpace type="separate" max="-2" attributes="0"/>
-              <Component id="LabelLoanDate" min="-2" pref="24" max="-2" attributes="0"/>
-              <EmptySpace type="separate" max="-2" attributes="0"/>
-              <Component id="LabelReturnDate" min="-2" pref="24" max="-2" attributes="0"/>
-              <EmptySpace pref="26" max="32767" attributes="0"/>
+              <EmptySpace pref="68" max="32767" attributes="0"/>
               <Component id="NoteCheckBox" min="-2" max="-2" attributes="0"/>
               <EmptySpace type="unrelated" max="-2" attributes="0"/>
               <Component id="LabelNote" min="-2" max="-2" attributes="0"/>
               <EmptySpace type="unrelated" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="ButtomLoan" alignment="3" min="-2" pref="47" max="-2" attributes="0"/>
+                  <Component id="ButtonLoan" alignment="3" min="-2" pref="47" max="-2" attributes="0"/>
                   <Component id="ButtomCancel" alignment="3" min="-2" pref="47" max="-2" attributes="0"/>
               </Group>
               <EmptySpace min="-2" pref="22" max="-2" attributes="0"/>
@@ -113,7 +123,7 @@
   <SubComponents>
     <Component class="javax.swing.JLabel" name="LabelLoanDate">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Fecha del Prestamo"/>
+        <Property name="text" type="java.lang.String" value="Nombre del usuario"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="LabelReturnDate">
@@ -137,12 +147,12 @@
         <Property name="text" type="java.lang.String" value="DE NO DEVOLVER EL RECURSO, SE LE APLICARA UNA SANCION."/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JButton" name="ButtomLoan">
+    <Component class="javax.swing.JButton" name="ButtonLoan">
       <Properties>
         <Property name="text" type="java.lang.String" value="Solicitar Prestamo"/>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="ButtomLoanActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="ButtonLoanActionPerformed"/>
       </Events>
       <AuxValues>
         <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
@@ -156,6 +166,9 @@
         <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="ButtomCancelMouseClicked"/>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="ButtomCancelActionPerformed"/>
       </Events>
+      <AuxValues>
+        <AuxValue name="JavaCodeGenerator_SerializeTo" type="java.lang.String" value="LoanView_ButtomCancel"/>
+      </AuxValues>
     </Component>
     <Container class="javax.swing.JToolBar" name="jToolBar1">
       <Properties>
@@ -163,9 +176,25 @@
       </Properties>
 
       <Layout class="org.netbeans.modules.form.compat2.layouts.DesignBoxLayout"/>
+      <SubComponents>
+        <Component class="javax.swing.JButton" name="jButtonBack">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="REGRESAR"/>
+            <Property name="focusable" type="boolean" value="false"/>
+            <Property name="horizontalTextPosition" type="int" value="0"/>
+            <Property name="verticalTextPosition" type="int" value="3"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButtonBackActionPerformed"/>
+          </Events>
+        </Component>
+      </SubComponents>
     </Container>
     <Component class="javax.swing.JLabel" name="LabelLoanTittle">
       <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Tahoma" size="14" style="1"/>
+        </Property>
         <Property name="text" type="java.lang.String" value="Seleccione el Recurso"/>
       </Properties>
     </Component>
@@ -194,25 +223,16 @@
       </SubComponents>
     </Container>
     <Component class="javax.swing.JTextField" name="jTextFieldUserName">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="Nombre usuario"/>
-      </Properties>
       <AuxValues>
         <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
       </AuxValues>
     </Component>
     <Component class="javax.swing.JTextField" name="jTextFieldStarDate">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="Fecha inicio"/>
-      </Properties>
       <AuxValues>
         <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
       </AuxValues>
     </Component>
     <Component class="javax.swing.JTextField" name="jTextFieldEndDate">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="Fecha de entrega"/>
-      </Properties>
       <AuxValues>
         <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
       </AuxValues>
@@ -221,10 +241,10 @@
       <Properties>
         <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
           <StringArray count="4">
-            <StringItem index="0" value="Item 1"/>
-            <StringItem index="1" value="Item 2"/>
-            <StringItem index="2" value="Item 3"/>
-            <StringItem index="3" value="Item 4"/>
+            <StringItem index="0" value="Seleccione"/>
+            <StringItem index="1" value="Estudiante"/>
+            <StringItem index="2" value="Profesor"/>
+            <StringItem index="3" value="Externo"/>
           </StringArray>
         </Property>
       </Properties>
@@ -232,19 +252,24 @@
         <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
       </AuxValues>
     </Component>
-    <Component class="javax.swing.JComboBox" name="jComboBoxUserRegister">
+    <Component class="javax.swing.JLabel" name="LabelLoanDate1">
       <Properties>
-        <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-          <StringArray count="4">
-            <StringItem index="0" value="Item 1"/>
-            <StringItem index="1" value="Item 2"/>
-            <StringItem index="2" value="Item 3"/>
-            <StringItem index="3" value="Item 4"/>
-          </StringArray>
-        </Property>
+        <Property name="text" type="java.lang.String" value="Tipo de usuario"/>
       </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="LabelLoanDate2">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Fecha del Prestamo"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="LabelLoanDate3">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Usuario registrador"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JTextField" name="jTextFieldUserRegister">
       <AuxValues>
-        <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+        <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
       </AuxValues>
     </Component>
   </SubComponents>
