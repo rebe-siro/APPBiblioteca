@@ -253,7 +253,7 @@ public class LoanView extends javax.swing.JFrame {
     private javax.swing.JLabel LabelReturnDate;
     public javax.swing.JCheckBox NoteCheckBox;
     private javax.swing.JButton jButtonBack;
-    private javax.swing.JComboBox<String> jComboBoxUserType;
+    public javax.swing.JComboBox<String> jComboBoxUserType;
     private javax.swing.JScrollPane jScrollPane1;
     public javax.swing.JTable jTableResources;
     public javax.swing.JTextField jTextFieldEndDate;

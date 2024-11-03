@@ -101,4 +101,12 @@ public class LoanController implements ActionListener{
         }
         });
     }
+
+
+    public void clean(){
+        view.jTextFieldUserName.setText("");
+        view.jTextFieldUserRegister.setText("");
+        view.jComboBoxUserType.setSelectedIndex(0);
+
+    }
 }
