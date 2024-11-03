@@ -118,11 +118,11 @@ public class MainPage extends javax.swing.JFrame {
 
     private void jButtonPrestamoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButtonPrestamoMouseClicked
         LoanView view = new LoanView();
-        //Loan model = new Loan();
+        Resources model = new Resources();
+        Loan modelLoan = new Loan();
         ConsultasRecurso querys = new ConsultasRecurso();
-        //LoanController loan = new LoanController(model, querys, view);
-        view.setVisible(true);
-        view.setPositionRelativeTo(null);
+        LoanController loanController = new LoanController(model,modelLoan,querys,view);        
+        view.setVisible(true);        
     }//GEN-LAST:event_jButtonPrestamoMouseClicked
 
     /**

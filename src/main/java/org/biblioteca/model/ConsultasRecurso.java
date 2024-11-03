@@ -171,4 +171,28 @@ public class ConsultasRecurso extends Conexion {
             }
         }
     }
+
+    public ResultSet listAvailables() {
+        PreparedStatement ps = null;
+        ResultSet rs = null;
+        Connection con = getConexion();
+        String sql = "SELECT code as Código, title as Título, author as Autor, type as Tipo, status as Estatus "
+                    + " FROM recurso where status = true order by code asc";
+
+        try {
+            ps = con.prepareStatement(sql);            
+            rs = ps.executeQuery();
+
+            return rs;
+        } catch (SQLException e) {
+            System.err.println(e);
+            return null;
+        } finally {
+            try {
+                con.close();
+            } catch (SQLException e) {
+                System.err.println(e);
+            }
+        }
+    }
 }

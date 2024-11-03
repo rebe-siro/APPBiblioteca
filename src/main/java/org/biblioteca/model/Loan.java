@@ -17,6 +17,9 @@ public class Loan {
     private boolean status;
     private String userRegister;
 
+    public Loan() {
+    }
+
     public Loan(int code, String user, Date star_Date, Date end_Date, boolean status) {
         this.code = code;
         this.user = user;

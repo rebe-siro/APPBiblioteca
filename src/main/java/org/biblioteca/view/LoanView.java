@@ -9,6 +9,7 @@ import javax.swing.JComboBox;
 import javax.swing.JCheckBox;
 //import com.toedter.calendar.JDateChooser;
 import java.util.List;
+import javax.swing.table.DefaultTableModel;
 import org.biblioteca.controller.ConexionController;
 
 /**
@@ -16,14 +17,18 @@ import org.biblioteca.controller.ConexionController;
  * @author JESUS
  */
 public class LoanView extends javax.swing.JFrame {
-    private ConexionController cc;
+    //private ConexionController cc;
+     DefaultTableModel dt = new DefaultTableModel();
     /**
      * Creates new form LoanView
      */
     public LoanView() {
         initComponents();
-        cc = new ConexionController();
-        fillComboBoxResourcesName();
+        //cc = new ConexionController();        
+        String ids [] = {"Código", "Título", "Autor", "Tipo", "Estatus"};
+        dt.setColumnIdentifiers(ids);
+        jTableResources.setModel(dt);        
+
     }
 
     /**
@@ -35,33 +40,23 @@ public class LoanView extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        LabelLoanTittle = new javax.swing.JLabel();
-        ComboBoxResourcesName = new javax.swing.JComboBox<>();
-        ComboBoxTypeResources = new javax.swing.JComboBox<>();
-        LabelNameResources = new javax.swing.JLabel();
-        LabelTypeResources = new javax.swing.JLabel();
         LabelLoanDate = new javax.swing.JLabel();
         LabelReturnDate = new javax.swing.JLabel();
         NoteCheckBox = new javax.swing.JCheckBox();
         LabelNote = new javax.swing.JLabel();
         ButtomLoan = new javax.swing.JButton();
         ButtomCancel = new javax.swing.JButton();
+        jToolBar1 = new javax.swing.JToolBar();
+        LabelLoanTittle = new javax.swing.JLabel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jTableResources = new javax.swing.JTable();
+        jTextFieldUserName = new javax.swing.JTextField();
+        jTextFieldSarDate = new javax.swing.JTextField();
+        jTextFieldEndDate = new javax.swing.JTextField();
+        jComboBoxUserType = new javax.swing.JComboBox<>();
+        jComboBoxUserRegister = new javax.swing.JComboBox<>();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-
-        LabelLoanTittle.setText("PRESTAMOS");
-
-        ComboBoxResourcesName.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                ComboBoxResourcesNameActionPerformed(evt);
-            }
-        });
-
-        ComboBoxTypeResources.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Libro", "Video", "Audio", "Periodico" }));
-
-        LabelNameResources.setText("Nombre del Recurso");
-
-        LabelTypeResources.setText("Tipo del Recurso");
 
         LabelLoanDate.setText("Fecha del Prestamo");
 
@@ -95,72 +90,105 @@ public class LoanView extends javax.swing.JFrame {
             }
         });
 
+        jToolBar1.setRollover(true);
+
+        LabelLoanTittle.setText("Seleccione el Recurso");
+
+        jTableResources.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4"
+            }
+        ));
+        jScrollPane1.setViewportView(jTableResources);
+
+        jTextFieldUserName.setText("Nombre usuario");
+
+        jTextFieldSarDate.setText("Fecha inicio");
+
+        jTextFieldEndDate.setText("Fecha de entrega");
+
+        jComboBoxUserType.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+
+        jComboBoxUserRegister.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jToolBar1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(layout.createSequentialGroup()
-                .addGap(87, 87, 87)
+                .addGap(398, 398, 398)
                 .addComponent(LabelLoanDate)
-                .addGap(94, 94, 94)
+                .addGap(0, 0, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
                 .addComponent(LabelReturnDate)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(409, 409, 409))
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(73, 73, 73)
-                        .addComponent(LabelNote))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(212, 212, 212)
-                        .addComponent(LabelLoanTittle)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(41, 41, 41)
-                        .addComponent(ButtomLoan, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(ButtomCancel, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(NoteCheckBox))
-                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGap(31, 31, 31)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(LabelNameResources)
-                            .addComponent(LabelTypeResources))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(ComboBoxResourcesName, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(ComboBoxTypeResources, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addGap(39, 39, 39))
+                            .addComponent(NoteCheckBox)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(LabelLoanTittle)
+                                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 597, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(26, 26, 26)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jTextFieldSarDate, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jTextFieldEndDate, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jComboBoxUserRegister, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jTextFieldUserName, javax.swing.GroupLayout.PREFERRED_SIZE, 172, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jComboBoxUserType, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(84, 84, 84)
+                        .addComponent(ButtomLoan, javax.swing.GroupLayout.PREFERRED_SIZE, 269, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(88, 88, 88)
+                        .addComponent(ButtomCancel, javax.swing.GroupLayout.PREFERRED_SIZE, 288, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(63, 63, 63)
+                        .addComponent(LabelNote)))
+                .addContainerGap(90, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(15, 15, 15)
+                .addComponent(jToolBar1, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
                 .addComponent(LabelLoanTittle)
-                .addGap(30, 30, 30)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(ComboBoxTypeResources, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(LabelTypeResources))
-                .addGap(27, 27, 27)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(LabelNameResources)
-                    .addComponent(ComboBoxResourcesName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(23, 23, 23)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(LabelLoanDate, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(LabelReturnDate, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(52, 52, 52)
-                .addComponent(NoteCheckBox)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(jTextFieldUserName, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(jComboBoxUserType, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(jTextFieldSarDate, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(jTextFieldEndDate, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(30, 30, 30)
+                        .addComponent(jComboBoxUserRegister, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(18, 18, 18)
+                .addComponent(LabelLoanDate, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(LabelReturnDate, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 26, Short.MAX_VALUE)
+                .addComponent(NoteCheckBox)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(LabelNote)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 25, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(ButtomLoan)
-                    .addComponent(ButtomCancel))
-                .addGap(35, 35, 35))
+                    .addComponent(ButtomLoan, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(ButtomCancel, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(22, 22, 22))
         );
 
         pack();
@@ -182,10 +210,6 @@ public class LoanView extends javax.swing.JFrame {
     dispose();        // TODO add your handling code here:
     }//GEN-LAST:event_ButtomCancelMouseClicked
 
-    private void ComboBoxResourcesNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ComboBoxResourcesNameActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_ComboBoxResourcesNameActionPerformed
-
     /**
      * @param args the command line arguments
      */
@@ -193,15 +217,19 @@ public class LoanView extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton ButtomCancel;
     public javax.swing.JButton ButtomLoan;
-    public javax.swing.JComboBox<String> ComboBoxResourcesName;
-    public javax.swing.JComboBox<String> ComboBoxTypeResources;
     private javax.swing.JLabel LabelLoanDate;
     private javax.swing.JLabel LabelLoanTittle;
-    private javax.swing.JLabel LabelNameResources;
     private javax.swing.JLabel LabelNote;
     private javax.swing.JLabel LabelReturnDate;
-    private javax.swing.JLabel LabelTypeResources;
     public javax.swing.JCheckBox NoteCheckBox;
+    private javax.swing.JComboBox<String> jComboBoxUserRegister;
+    private javax.swing.JComboBox<String> jComboBoxUserType;
+    private javax.swing.JScrollPane jScrollPane1;
+    public javax.swing.JTable jTableResources;
+    private javax.swing.JTextField jTextFieldEndDate;
+    private javax.swing.JTextField jTextFieldSarDate;
+    private javax.swing.JTextField jTextFieldUserName;
+    private javax.swing.JToolBar jToolBar1;
     // End of variables declaration//GEN-END:variables
    
     
@@ -211,12 +239,6 @@ public class LoanView extends javax.swing.JFrame {
  }
     public JButton getButtonLoan (){
             return ButtomCancel;
- }
-    public JComboBox getComboBoxResourcesName (){
-            return ComboBoxResourcesName;
- }
-    public JComboBox getComboBoxTypeResources (){
-            return ComboBoxTypeResources;
  }
     public JCheckBox getNoteCheckBox (){
             return NoteCheckBox;
@@ -228,14 +250,5 @@ public class LoanView extends javax.swing.JFrame {
             return DateChooserReturn;      
 }
 */
-    void setPositionRelativeTo(Object object) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
-    
-    private void fillComboBoxResourcesName() {
-        List<String> datos = cc.obtenerDatos();
-        for (String dato : datos) {
-            ComboBoxResourcesName.addItem(dato);
-        }
-    }
+
 }
