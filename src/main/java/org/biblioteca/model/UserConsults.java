@@ -48,7 +48,7 @@ public class UserConsults extends Conexion {
         PreparedStatement ps = null;
         ResultSet rs = null;
         Connection con = getConexion();
-        String sql = "SELECT * FROM TipoUsuario";
+        String sql = "SELECT * FROM tipo_usuario";
 
         try {
             ps = con.prepareStatement(sql);            
@@ -70,7 +70,7 @@ public class UserConsults extends Conexion {
         PreparedStatement ps = null;
         ResultSet rs = null;
         Connection con = getConexion();
-        String sql = "SELECT * FROM Carrera";
+        String sql = "SELECT * FROM carrera";
 
         try {
             ps = con.prepareStatement(sql);            

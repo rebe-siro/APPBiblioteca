@@ -7,7 +7,6 @@ package org.biblioteca.controller;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.awt.event.MouseAdapter;
 import java.sql.ResultSet;
 import javax.swing.JOptionPane;
 import org.biblioteca.model.UserConsults;
@@ -28,12 +27,14 @@ public class UserController implements ActionListener {
         this.model = model;
         this.querys = querys;
         this.view = view;
-        this.view.getButtonCancel().addActionListener(this);
-        this.view.getTextFieldIdentification().addActionListener(this);
+        //this.view.cancel.addActionListener(this);
         //this.view..addActionListener(this);
-        this.view.getButtonRegisterUser().addActionListener(this);
-        this.view.getComboBoxUserType().addActionListener(this);
-        this.view.getComboBoxCareer().addActionListener(this);     
+        this.view.lastName.addActionListener(this);
+        this.view.name.addActionListener(this);
+        //this.view.addActionListener(this);
+        this.view.userRegister.addActionListener(this);
+        this.view.userType.addActionListener(this);
+        this.view.career.addActionListener(this);     
         start();
     }
 
@@ -41,25 +42,25 @@ public class UserController implements ActionListener {
         view.setTitle("Registrar Usuario");
         view.setLocationRelativeTo(null);
         fillComboType();
+        fillComboCareer();
 
     }
 
+    @Override
     public void actionPerformed(ActionEvent e) {
 
-        if (e.getSource() == view.getButtonRegisterUser()) {
+        if (e.getSource() == view.userRegister) {
             
-                    model.setName(view.getTextFieldName().getText());
-                    model.setLastName(view.getTextFieldLastName().getText());                                 
-                    model.setIdentification(view.getTextFieldIdentification().getText());
-                    model.setCareer(view.getComboBoxCareer().getSelectedIndex());
-                    model.setType(view.getComboBoxUserType().getSelectedIndex());
+                    model.setName(view.name.getText());
+                    model.setLastName(view.lastName.getText());                                 
+                    model.setIdentification(view.identification.getText());
+                    model.setCareer(view.career.getSelectedIndex());
+                    model.setType(view.userType.getSelectedIndex());
                     
-            
                     {
                         if (querys.register(model)) {
                             JOptionPane.showMessageDialog(null, "Usuario Registrado");
                             clean();
-
                         } else {
                             JOptionPane.showMessageDialog(null, "Error al Registrar, verifique que este Usuario no esté registrado");
                         }
@@ -69,11 +70,11 @@ public class UserController implements ActionListener {
 }
 
     private void clean() {
-         view.getTextFieldName().setText("");
-        view.getTextFieldLastName().setText("");
-        view.getTextFieldIdentification().setText("");
-        view.getComboBoxCareer().setSelectedIndex(0);
-        view.getComboBoxUserType().setSelectedIndex(0);
+         view.name.setText("");
+        view.lastName.setText("");
+        view.identification.setText("");
+        view.career.setSelectedIndex(0);
+        view.userType.setSelectedIndex(0);
 
     }
 
@@ -81,9 +82,9 @@ public class UserController implements ActionListener {
     public void fillComboType(){
         try {                                       
                 ResultSet rs = querys.listUserType();
-                view.getComboBoxUserType().addItem("Seleccione");                 
+                view.userType.addItem("Seleccione");                 
                 while (rs.next()) {
-                    view.getComboBoxUserType().addItem(rs.getString("Tipo de Usuario"));                    
+                    view.userType.addItem(rs.getString("Tipo de Usuario"));                    
                 }                                  
         } catch (Exception ex) {
             JOptionPane.showMessageDialog(null, "Se ha producido un error al llenar los tipos de usuario");
@@ -94,9 +95,9 @@ public class UserController implements ActionListener {
     public void fillComboCareer(){
         try {                                       
                 ResultSet rs = querys.listCareer();
-                view.getComboBoxCareer().addItem("Seleccione");                 
+                view.career.addItem("Seleccione");                 
                 while (rs.next()) {
-                    view.getComboBoxCareer().addItem(rs.getString("Carrera"));                    
+                    view.career.addItem(rs.getString("Carrera"));                    
                 }                                  
         } catch (Exception ex) {
             JOptionPane.showMessageDialog(null, "Se ha producido un error al llenar la carrera");

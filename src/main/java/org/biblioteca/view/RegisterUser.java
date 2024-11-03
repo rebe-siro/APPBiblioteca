@@ -7,7 +7,6 @@ package org.biblioteca.view;
 import javax.swing.JButton;
 import javax.swing.JComboBox;
 import javax.swing.JTextField;
-import org.biblioteca.controller.UserController;
 /**
  *
  * @author HP
@@ -198,17 +197,17 @@ public class RegisterUser extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton cancel;
-    private javax.swing.JComboBox<String> career;
+    public javax.swing.JComboBox<String> career;
     private javax.swing.JLabel careerLabel;
-    private javax.swing.JTextField identification;
+    public javax.swing.JTextField identification;
     private javax.swing.JLabel identificationLabel;
-    private javax.swing.JTextField lastName;
+    public javax.swing.JTextField lastName;
     private javax.swing.JLabel lastNameLabel;
-    private javax.swing.JTextField name;
+    public javax.swing.JTextField name;
     private javax.swing.JLabel nameLabel;
-    private javax.swing.JButton userRegister;
+    public javax.swing.JButton userRegister;
     private javax.swing.JLabel userRegistrationTitle;
-    private javax.swing.JComboBox<String> userType;
+    public javax.swing.JComboBox<String> userType;
     private javax.swing.JLabel userTypeLabel;
     // End of variables declaration//GEN-END:variables
 
