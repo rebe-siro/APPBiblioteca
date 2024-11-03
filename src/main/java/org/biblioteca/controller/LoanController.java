@@ -4,13 +4,16 @@
  */
 package org.biblioteca.controller;
 
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.sql.Date;
+import java.time.LocalDate;
+import java.time.ZoneId;
 import javax.swing.JOptionPane;
-import org.biblioteca.model.Conexion;
 import org.biblioteca.model.ConsultasRecurso;
 import org.biblioteca.model.Loan;
 import org.biblioteca.model.Resources;
 import org.biblioteca.view.LoanView;
-import org.biblioteca.view.ResourcesManager;
 
 /**
  *
@@ -21,12 +24,15 @@ public class LoanController {
     private final Loan modelLoan;
     private final ConsultasRecurso querys;     
     private final LoanView view;
+    private LocalDate startDate = LocalDate.now();
+    private LocalDate endDate = startDate.plusDays(7);
 
     public LoanController(Resources model, Loan modelLoan, ConsultasRecurso querys, LoanView view) {
         this.model = model;
         this.modelLoan = modelLoan;
         this.querys = querys;
         this.view = view;
+        this.view.ButtomLoan.addActionListener((ActionListener) this);
         start();
         //this.view.ButtomLoan.addActionListener(this);
     }
@@ -35,6 +41,8 @@ public class LoanController {
         view.setTitle("Prestamos...");
         view.setLocationRelativeTo(null);
         showTableResources();
+        view.jTextFieldStarDate.setText(startDate.toString());
+        view.jTextFieldEndDate.setText(endDate.toString());
     }
 
     public void showTableResources(){
@@ -46,4 +54,25 @@ public class LoanController {
         }
     }
 
+    @Override
+    public void actionPerformed(ActionEvent e) {
+
+        if (e.getSource() == view.ButtomLoan) {
+            try {
+                    modelLoan.setUserLoan(view.jTextFieldUserName.getText());
+                    modelLoan.setStar_Date(Date.from(startDate.atStartOfDay(ZoneId.systemDefault()).toInstant()));
+                    modelLoan.setEnd_Date(Date.from(endDate.atStartOfDay(ZoneId.systemDefault()).toInstant()));
+                    modelLoan.setStatus(true);
+                    modelLoan.setUserRegister("TEST");                
+                    if (querys.registerLoan(modelLoan)) {
+                        JOptionPane.showMessageDialog(null, "Prestamo Registrado");                        
+                        showTableResources();
+                    } else {
+                        JOptionPane.showMessageDialog(null, "Error al Registrar Prestamo");
+                    }
+            } catch (NumberFormatException ex) {
+                JOptionPane.showMessageDialog(null, "Verifique los datos del prestamos");
+            }
+        }
+    }
 }

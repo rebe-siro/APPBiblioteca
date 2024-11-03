@@ -51,7 +51,7 @@ public class LoanView extends javax.swing.JFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         jTableResources = new javax.swing.JTable();
         jTextFieldUserName = new javax.swing.JTextField();
-        jTextFieldSarDate = new javax.swing.JTextField();
+        jTextFieldStarDate = new javax.swing.JTextField();
         jTextFieldEndDate = new javax.swing.JTextField();
         jComboBoxUserType = new javax.swing.JComboBox<>();
         jComboBoxUserRegister = new javax.swing.JComboBox<>();
@@ -109,7 +109,7 @@ public class LoanView extends javax.swing.JFrame {
 
         jTextFieldUserName.setText("Nombre usuario");
 
-        jTextFieldSarDate.setText("Fecha inicio");
+        jTextFieldStarDate.setText("Fecha inicio");
 
         jTextFieldEndDate.setText("Fecha de entrega");
 
@@ -142,7 +142,7 @@ public class LoanView extends javax.swing.JFrame {
                                     .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 597, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addGap(26, 26, 26)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jTextFieldSarDate, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jTextFieldStarDate, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(jTextFieldEndDate, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(jComboBoxUserRegister, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(jTextFieldUserName, javax.swing.GroupLayout.PREFERRED_SIZE, 172, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -171,7 +171,7 @@ public class LoanView extends javax.swing.JFrame {
                         .addGap(18, 18, 18)
                         .addComponent(jComboBoxUserType, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
-                        .addComponent(jTextFieldSarDate, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jTextFieldStarDate, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
                         .addComponent(jTextFieldEndDate, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(30, 30, 30)
@@ -226,9 +226,9 @@ public class LoanView extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> jComboBoxUserType;
     private javax.swing.JScrollPane jScrollPane1;
     public javax.swing.JTable jTableResources;
-    private javax.swing.JTextField jTextFieldEndDate;
-    private javax.swing.JTextField jTextFieldSarDate;
-    private javax.swing.JTextField jTextFieldUserName;
+    public javax.swing.JTextField jTextFieldEndDate;
+    public javax.swing.JTextField jTextFieldStarDate;
+    public javax.swing.JTextField jTextFieldUserName;
     private javax.swing.JToolBar jToolBar1;
     // End of variables declaration//GEN-END:variables
    

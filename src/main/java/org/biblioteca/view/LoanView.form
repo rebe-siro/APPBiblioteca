@@ -47,7 +47,7 @@
                               </Group>
                               <EmptySpace min="26" pref="26" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="jTextFieldSarDate" min="-2" pref="190" max="-2" attributes="0"/>
+                                  <Component id="jTextFieldStarDate" min="-2" pref="190" max="-2" attributes="0"/>
                                   <Component id="jTextFieldEndDate" min="-2" pref="190" max="-2" attributes="0"/>
                                   <Component id="jComboBoxUserRegister" min="-2" pref="190" max="-2" attributes="0"/>
                                   <Component id="jTextFieldUserName" min="-2" pref="172" max="-2" attributes="0"/>
@@ -85,7 +85,7 @@
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Component id="jComboBoxUserType" min="-2" pref="50" max="-2" attributes="0"/>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Component id="jTextFieldSarDate" min="-2" pref="51" max="-2" attributes="0"/>
+                      <Component id="jTextFieldStarDate" min="-2" pref="51" max="-2" attributes="0"/>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Component id="jTextFieldEndDate" min="-2" pref="49" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
@@ -197,16 +197,25 @@
       <Properties>
         <Property name="text" type="java.lang.String" value="Nombre usuario"/>
       </Properties>
+      <AuxValues>
+        <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+      </AuxValues>
     </Component>
-    <Component class="javax.swing.JTextField" name="jTextFieldSarDate">
+    <Component class="javax.swing.JTextField" name="jTextFieldStarDate">
       <Properties>
         <Property name="text" type="java.lang.String" value="Fecha inicio"/>
       </Properties>
+      <AuxValues>
+        <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+      </AuxValues>
     </Component>
     <Component class="javax.swing.JTextField" name="jTextFieldEndDate">
       <Properties>
         <Property name="text" type="java.lang.String" value="Fecha de entrega"/>
       </Properties>
+      <AuxValues>
+        <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+      </AuxValues>
     </Component>
     <Component class="javax.swing.JComboBox" name="jComboBoxUserType">
       <Properties>

@@ -9,6 +9,7 @@ package org.biblioteca.model;
  * @author Rebe
  */
 import java.sql.Connection;
+import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -187,6 +188,33 @@ public class ConsultasRecurso extends Conexion {
         } catch (SQLException e) {
             System.err.println(e);
             return null;
+        } finally {
+            try {
+                con.close();
+            } catch (SQLException e) {
+                System.err.println(e);
+            }
+        }
+    }
+
+    public boolean registerLoan(Loan loan) {
+        PreparedStatement ps = null;
+        Connection con = getConexion();
+
+        String sql = "INSERT INTO prestamo ( userLoan, start_date, end_date, status, userregister) VALUES(?,?,?,?,?)";
+
+        try {
+            ps = con.prepareStatement(sql);
+            ps.setString(1, loan.getUserLoan());
+            ps.setDate(2, (Date) loan.getStar_Date());
+            ps.setDate(3, (Date) loan.getEnd_Date());
+            ps.setBoolean(4, loan.isStatus());
+            ps.setString(5, loan.getUserRegister());
+            ps.execute();
+            return true;
+        } catch (SQLException e) {
+            System.err.println(e);
+            return false;
         } finally {
             try {
                 con.close();

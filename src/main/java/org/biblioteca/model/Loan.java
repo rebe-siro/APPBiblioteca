@@ -11,7 +11,7 @@ import java.util.Date;
 public class Loan {
     private int code;
     //private int codeUser;
-    private String user;
+    private String userLoan;
     private Date star_Date;
     private Date end_Date;
     private boolean status;
@@ -22,7 +22,7 @@ public class Loan {
 
     public Loan(int code, String user, Date star_Date, Date end_Date, boolean status) {
         this.code = code;
-        this.user = user;
+        this.userLoan = user;
         this.star_Date = star_Date;
         this.end_Date = end_Date;
         this.status = status;
@@ -36,12 +36,12 @@ public class Loan {
         this.code = code;
     }
 
-    public String getUser() {
-        return user;
+    public String getUserLoan() {
+        return userLoan;
     }
 
-    public void setUser(String user) {
-        this.user = user;
+    public void setUserLoan(String userLoan) {
+        this.userLoan = userLoan;
     }
 
     public Date getStar_Date() {
@@ -67,5 +67,15 @@ public class Loan {
     public void setStatus(boolean status) {
         this.status = status;
     }
+
+    public String getUserRegister() {
+        return userRegister;
+    }
+
+    public void setUserRegister(String userRegister) {
+        this.userRegister = userRegister;
+    }
+
+
 
 }
