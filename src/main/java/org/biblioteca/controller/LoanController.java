@@ -82,6 +82,7 @@ public class LoanController implements ActionListener{
                         querys.registerLoanResources(modelLoanReso);
                         JOptionPane.showMessageDialog(null, "Prestamo Registrado");                        
                         showTableResources();
+                        clean();
                     }
                 } else {
                     JOptionPane.showMessageDialog(null, "Error al Registrar Prestamo");

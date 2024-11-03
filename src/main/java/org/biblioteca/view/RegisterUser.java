@@ -41,7 +41,7 @@ public class RegisterUser extends javax.swing.JFrame {
         userTypeLabel = new javax.swing.JLabel();
         userRegister = new javax.swing.JButton();
         cancel = new javax.swing.JButton();
-        career = new javax.swing.JComboBox<>();
+        career = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -79,8 +79,6 @@ public class RegisterUser extends javax.swing.JFrame {
             }
         });
 
-        career.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Análisis de Sistemas", "Ingeniería en Informática", "Ingeniería Telemática", "Ingenería de Producción", "Ingeniería Agroindustrial", "Licenciatura en Matemática", "Licenciatura en Física" }));
-
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -101,7 +99,7 @@ public class RegisterUser extends javax.swing.JFrame {
                             .addComponent(userType, javax.swing.GroupLayout.Alignment.LEADING, 0, 218, Short.MAX_VALUE)
                             .addComponent(name)
                             .addComponent(identification)
-                            .addComponent(career, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addComponent(career))
                         .addGap(96, 96, 96))
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(userRegister)
@@ -197,7 +195,7 @@ public class RegisterUser extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton cancel;
-    public javax.swing.JComboBox<String> career;
+    public javax.swing.JTextField career;
     private javax.swing.JLabel careerLabel;
     public javax.swing.JTextField identification;
     private javax.swing.JLabel identificationLabel;
@@ -211,29 +209,5 @@ public class RegisterUser extends javax.swing.JFrame {
     private javax.swing.JLabel userTypeLabel;
     // End of variables declaration//GEN-END:variables
 
-
-    public JButton getButtonCancel (){
-            return cancel;
- }
-    public JButton getButtonRegisterUser (){
-            return userRegister;
- }
-    public JComboBox getComboBoxCareer (){
-            return career;
- }
-    public JComboBox getComboBoxUserType (){
-            return userType;
-            
-    }
-    public JTextField getTextFieldIdentification (){
-            return identification;
-    }
-    public JTextField getTextFieldLastName (){
-            return lastName;
-    }
-    public JTextField getTextFieldName (){
-            return name;
-    }
-    
 
 }

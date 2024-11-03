@@ -42,7 +42,7 @@ public class UserController implements ActionListener {
         view.setTitle("Registrar Usuario");
         view.setLocationRelativeTo(null);
         fillComboType();
-        fillComboCareer();
+        //fillComboCareer();
 
     }
 
@@ -54,7 +54,8 @@ public class UserController implements ActionListener {
                     model.setName(view.name.getText());
                     model.setLastName(view.lastName.getText());                                 
                     model.setIdentification(view.identification.getText());
-                    model.setCareer(view.career.getSelectedIndex());
+                    model.setCareer(view.career.getText());
+                    //model.setCareer(view.career.getSelectedIndex());
                     model.setType(view.userType.getSelectedIndex());
                     
                     {
@@ -73,7 +74,8 @@ public class UserController implements ActionListener {
          view.name.setText("");
         view.lastName.setText("");
         view.identification.setText("");
-        view.career.setSelectedIndex(0);
+        view.career.setText("");
+       // view.career.setSelectedIndex(0);
         view.userType.setSelectedIndex(0);
 
     }
@@ -92,7 +94,7 @@ public class UserController implements ActionListener {
         }
     }
     
-    public void fillComboCareer(){
+    /*public void fillComboCareer(){
         try {                                       
                 ResultSet rs = querys.listCareer();
                 view.career.addItem("Seleccione");                 
@@ -103,6 +105,6 @@ public class UserController implements ActionListener {
             JOptionPane.showMessageDialog(null, "Se ha producido un error al llenar la carrera");
             ex.printStackTrace();
         }
-    }
+    }*/
     
 }

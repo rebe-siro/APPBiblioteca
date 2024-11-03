@@ -14,11 +14,11 @@ public class User {
     private String name;
     private String lastName;
     private String identification;
-    private int career;
+    private String career;
     private int type;
     private boolean status;
 
-    public User(int code, String name, String lastName, String identification, int career, int type, boolean status) {
+    public User(int code, String name, String lastName, String identification, String career, int type, boolean status) {
         this.code = code;
         this.name = name;
         this.lastName = lastName;
@@ -64,11 +64,11 @@ public class User {
         this.identification = identification;
     }
 
-    public int getCareer() {
+    public String getCareer() {
         return career;
     }
 
-    public void setCareer(int career) {
+    public void setCareer(String career) {
         this.career = career;
     }
 

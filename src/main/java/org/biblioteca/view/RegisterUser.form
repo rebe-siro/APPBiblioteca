@@ -183,22 +183,8 @@
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="cancelActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JComboBox" name="career">
-      <Properties>
-        <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-          <StringArray count="7">
-            <StringItem index="0" value="An&#xe1;lisis de Sistemas"/>
-            <StringItem index="1" value="Ingenier&#xed;a en Inform&#xe1;tica"/>
-            <StringItem index="2" value="Ingenier&#xed;a Telem&#xe1;tica"/>
-            <StringItem index="3" value="Ingener&#xed;a de Producci&#xf3;n"/>
-            <StringItem index="4" value="Ingenier&#xed;a Agroindustrial"/>
-            <StringItem index="5" value="Licenciatura en Matem&#xe1;tica"/>
-            <StringItem index="6" value="Licenciatura en F&#xed;sica"/>
-          </StringArray>
-        </Property>
-      </Properties>
+    <Component class="javax.swing.JTextField" name="career">
       <AuxValues>
-        <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
         <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
       </AuxValues>
     </Component>
