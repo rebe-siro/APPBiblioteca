@@ -19,7 +19,7 @@ import org.biblioteca.view.LoanView;
  *
  * @author JESUS
  */
-public class LoanController {
+public class LoanController implements ActionListener{
     private final Resources model;
     private final Loan modelLoan;
     private final ConsultasRecurso querys;     
