@@ -39,12 +39,16 @@ public class MainPage extends javax.swing.JFrame {
 
         jPanel1 = new javax.swing.JPanel();
         jButtonBiblioteca = new javax.swing.JButton();
-        jButtonPrestamo = new javax.swing.JButton();
         userRegister = new javax.swing.JButton();
+        jButtonAutor = new javax.swing.JButton();
+        jButtonCategoria = new javax.swing.JButton();
+        jButtonPrestamo = new javax.swing.JButton();
+        jButtonPosPrestamo = new javax.swing.JButton();
+        jButtonReportes = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jButtonBiblioteca.setFont(new java.awt.Font("Segoe UI", 1, 48)); // NOI18N
+        jButtonBiblioteca.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jButtonBiblioteca.setText("Revisar Biblioteca");
         jButtonBiblioteca.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -57,20 +61,7 @@ public class MainPage extends javax.swing.JFrame {
             }
         });
 
-        jButtonPrestamo.setFont(new java.awt.Font("Segoe UI", 1, 48)); // NOI18N
-        jButtonPrestamo.setText("Solicitar Prestamo");
-        jButtonPrestamo.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jButtonPrestamoMouseClicked(evt);
-            }
-        });
-        jButtonPrestamo.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButtonPrestamoActionPerformed(evt);
-            }
-        });
-
-        userRegister.setFont(new java.awt.Font("Segoe UI", 1, 48)); // NOI18N
+        userRegister.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         userRegister.setText("Registrar Usuario");
         userRegister.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -83,47 +74,116 @@ public class MainPage extends javax.swing.JFrame {
             }
         });
 
+        jButtonAutor.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        jButtonAutor.setText("Registrar Autor");
+        jButtonAutor.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonAutorActionPerformed(evt);
+            }
+        });
+
+        jButtonCategoria.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        jButtonCategoria.setText("Registrar Categoria");
+
+        jButtonPrestamo.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        jButtonPrestamo.setText("Solicitar Prestamo");
+        jButtonPrestamo.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButtonPrestamoMouseClicked(evt);
+            }
+        });
+        jButtonPrestamo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonPrestamoActionPerformed(evt);
+            }
+        });
+
+        jButtonPosPrestamo.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        jButtonPosPrestamo.setText("Devolucion");
+
+        jButtonReportes.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        jButtonReportes.setText("Reportes");
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addGap(95, 95, 95)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                .addContainerGap(600, Short.MAX_VALUE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                    .addComponent(jButtonReportes, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jButtonPosPrestamo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jButtonBiblioteca, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jButtonAutor, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(userRegister, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jButtonBiblioteca, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jButtonPrestamo, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 530, Short.MAX_VALUE))
-                .addGap(95, 95, 95))
+                    .addComponent(jButtonCategoria, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jButtonPrestamo, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(41, 41, 41))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addGap(61, 61, 61)
-                .addComponent(jButtonBiblioteca, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(35, 35, 35)
+                .addComponent(userRegister, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(userRegister, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jButtonAutor, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(jButtonPrestamo, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(60, Short.MAX_VALUE))
+                .addComponent(jButtonCategoria, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(jButtonBiblioteca, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(jButtonPrestamo, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(jButtonPosPrestamo, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(jButtonReportes, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(35, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void userRegisterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_userRegisterActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_userRegisterActionPerformed
+
+    private void userRegisterMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_userRegisterMouseClicked
+        RegisterUser view = new RegisterUser();
+        User model = new User();
+        UserConsults querys = new UserConsults();
+        UserController user = new UserController(model, querys, view);
+        view.setVisible(true);
+    }//GEN-LAST:event_userRegisterMouseClicked
+
     private void jButtonPrestamoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonPrestamoActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jButtonPrestamoActionPerformed
+
+    private void jButtonPrestamoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButtonPrestamoMouseClicked
+        LoanView view = new LoanView();
+        Resources model = new Resources();
+        Loan modelLoan = new Loan();
+        LoanResources modelLoanReso = new LoanResources();
+        ConsultasRecurso querys = new ConsultasRecurso();
+        LoanController loanController = new LoanController(model,modelLoan,modelLoanReso,querys,view);
+        view.setVisible(true);
+    }//GEN-LAST:event_jButtonPrestamoMouseClicked
 
     private void jButtonBibliotecaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonBibliotecaActionPerformed
         // TODO add your handling code here:
@@ -138,34 +198,20 @@ public class MainPage extends javax.swing.JFrame {
         //view.setPositionRelativeTo(null);
     }//GEN-LAST:event_jButtonBibliotecaMouseClicked
 
-    private void jButtonPrestamoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButtonPrestamoMouseClicked
-        LoanView view = new LoanView();
-        Resources model = new Resources();
-        Loan modelLoan = new Loan();
-        LoanResources modelLoanReso = new LoanResources();
-        ConsultasRecurso querys = new ConsultasRecurso();
-        LoanController loanController = new LoanController(model,modelLoan,modelLoanReso,querys,view);        
-        view.setVisible(true); 
-    }//GEN-LAST:event_jButtonPrestamoMouseClicked
-
-    private void userRegisterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_userRegisterActionPerformed
+    private void jButtonAutorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonAutorActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_userRegisterActionPerformed
-
-    private void userRegisterMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_userRegisterMouseClicked
-        RegisterUser view = new RegisterUser();
-        User model = new User();
-        UserConsults querys = new UserConsults();
-        UserController user = new UserController(model, querys, view);
-        view.setVisible(true);
-    }//GEN-LAST:event_userRegisterMouseClicked
+    }//GEN-LAST:event_jButtonAutorActionPerformed
 
     /**
      * @param args the command line arguments
      */
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    public javax.swing.JButton jButtonAutor;
     private javax.swing.JButton jButtonBiblioteca;
+    public javax.swing.JButton jButtonCategoria;
+    public javax.swing.JButton jButtonPosPrestamo;
     private javax.swing.JButton jButtonPrestamo;
+    public javax.swing.JButton jButtonReportes;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JButton userRegister;
     // End of variables declaration//GEN-END:variables
