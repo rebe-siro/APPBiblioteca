@@ -5,21 +5,27 @@
 package org.biblioteca.view;
 
 import javax.swing.JButton;
+import org.biblioteca.controller.AuthorController;
 import org.biblioteca.controller.LoanController;
 import org.biblioteca.controller.ResourcesController;
+import org.biblioteca.controller.UserController;
+
 import org.biblioteca.model.ConsultasRecurso;
 import org.biblioteca.model.Resources;
 import org.biblioteca.model.Loan;
 import org.biblioteca.model.User;
-import org.biblioteca.view.RegisterUser;
-import org.biblioteca.controller.UserController;
+import org.biblioteca.model.Author;
 import org.biblioteca.model.UserConsults;
 import org.biblioteca.model.LoanResources;
+
+//import org.biblioteca.view.RegisterAuthor;
+//import org.biblioteca.view.RegisterUser;
 /**
  *
- * @author Luzzio
+ * @author 
  */
 public class MainPage extends javax.swing.JFrame {
+
 
     /**
      * Creates new form MainPage
@@ -40,7 +46,7 @@ public class MainPage extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         jButtonBiblioteca = new javax.swing.JButton();
         userRegister = new javax.swing.JButton();
-        jButtonAutor = new javax.swing.JButton();
+        jButtonAuthor = new javax.swing.JButton();
         jButtonCategoria = new javax.swing.JButton();
         jButtonPrestamo = new javax.swing.JButton();
         jButtonPosPrestamo = new javax.swing.JButton();
@@ -74,11 +80,16 @@ public class MainPage extends javax.swing.JFrame {
             }
         });
 
-        jButtonAutor.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        jButtonAutor.setText("Registrar Autor");
-        jButtonAutor.addActionListener(new java.awt.event.ActionListener() {
+        jButtonAuthor.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        jButtonAuthor.setText("Registrar Autor");
+        jButtonAuthor.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButtonAuthorMouseClicked(evt);
+            }
+        });
+        jButtonAuthor.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButtonAutorActionPerformed(evt);
+                jButtonAuthorActionPerformed(evt);
             }
         });
 
@@ -114,7 +125,7 @@ public class MainPage extends javax.swing.JFrame {
                     .addComponent(jButtonReportes, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jButtonPosPrestamo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jButtonBiblioteca, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jButtonAutor, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jButtonAuthor, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(userRegister, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jButtonCategoria, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jButtonPrestamo, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
@@ -126,7 +137,7 @@ public class MainPage extends javax.swing.JFrame {
                 .addGap(35, 35, 35)
                 .addComponent(userRegister, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(jButtonAutor, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jButtonAuthor, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(jButtonCategoria, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
@@ -198,15 +209,23 @@ public class MainPage extends javax.swing.JFrame {
         //view.setPositionRelativeTo(null);
     }//GEN-LAST:event_jButtonBibliotecaMouseClicked
 
-    private void jButtonAutorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonAutorActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButtonAutorActionPerformed
+    private void jButtonAuthorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonAuthorActionPerformed
+         // TODO add your handling code here:
+    }//GEN-LAST:event_jButtonAuthorActionPerformed
+
+    private void jButtonAuthorMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButtonAuthorMouseClicked
+       /* RegisterAuthor view = new RegisterAuthor();
+        Author model = new Author();
+        AuthorController author = new AuthorController(model,  querys, view);
+        ConsultasRecurso querys = new ConsultasRecurso();
+        view.setVisible(true); */       // TODO add your handling code here:
+    }//GEN-LAST:event_jButtonAuthorMouseClicked
 
     /**
      * @param args the command line arguments
      */
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    public javax.swing.JButton jButtonAutor;
+    public javax.swing.JButton jButtonAuthor;
     private javax.swing.JButton jButtonBiblioteca;
     public javax.swing.JButton jButtonCategoria;
     public javax.swing.JButton jButtonPosPrestamo;
@@ -221,5 +240,13 @@ public JButton getjButtonBiblioteca() {
 }
 public JButton getjButtonPrestamo() {
         return jButtonPrestamo;
+}
+
+public JButton getjButtonUserRegister() {
+        return userRegister;
+}
+
+public JButton getjButtonAuthor() {
+        return jButtonAuthor;
 }
 }

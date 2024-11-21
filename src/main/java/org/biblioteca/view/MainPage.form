@@ -51,7 +51,7 @@
                       <Component id="jButtonReportes" max="32767" attributes="0"/>
                       <Component id="jButtonPosPrestamo" max="32767" attributes="0"/>
                       <Component id="jButtonBiblioteca" alignment="1" max="32767" attributes="0"/>
-                      <Component id="jButtonAutor" alignment="1" max="32767" attributes="0"/>
+                      <Component id="jButtonAuthor" alignment="1" max="32767" attributes="0"/>
                       <Component id="userRegister" alignment="1" max="32767" attributes="0"/>
                       <Component id="jButtonCategoria" alignment="1" max="32767" attributes="0"/>
                       <Component id="jButtonPrestamo" alignment="0" max="32767" attributes="0"/>
@@ -66,7 +66,7 @@
                   <EmptySpace min="-2" pref="35" max="-2" attributes="0"/>
                   <Component id="userRegister" min="-2" pref="65" max="-2" attributes="0"/>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
-                  <Component id="jButtonAutor" min="-2" pref="65" max="-2" attributes="0"/>
+                  <Component id="jButtonAuthor" min="-2" pref="65" max="-2" attributes="0"/>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Component id="jButtonCategoria" min="-2" pref="65" max="-2" attributes="0"/>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
@@ -107,7 +107,7 @@
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="userRegisterActionPerformed"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JButton" name="jButtonAutor">
+        <Component class="javax.swing.JButton" name="jButtonAuthor">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Segoe UI" size="18" style="1"/>
@@ -115,7 +115,8 @@
             <Property name="text" type="java.lang.String" value="Registrar Autor"/>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButtonAutorActionPerformed"/>
+            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jButtonAuthorMouseClicked"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButtonAuthorActionPerformed"/>
           </Events>
           <AuxValues>
             <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
