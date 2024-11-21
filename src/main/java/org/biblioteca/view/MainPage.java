@@ -214,11 +214,11 @@ public class MainPage extends javax.swing.JFrame {
     }//GEN-LAST:event_jButtonAuthorActionPerformed
 
     private void jButtonAuthorMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButtonAuthorMouseClicked
-       /* RegisterAuthor view = new RegisterAuthor();
+        RegisterAuthor view = new RegisterAuthor();
         Author model = new Author();
-        AuthorController author = new AuthorController(model,  querys, view);
         ConsultasRecurso querys = new ConsultasRecurso();
-        view.setVisible(true); */       // TODO add your handling code here:
+        AuthorController author = new AuthorController(model, querys, view);
+        view.setVisible(true);       // TODO add your handling code here:
     }//GEN-LAST:event_jButtonAuthorMouseClicked
 
     /**

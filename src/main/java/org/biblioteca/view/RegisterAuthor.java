@@ -7,7 +7,7 @@ import java.awt.event.MouseAdapter;
 
 /**
  *
- * @author Familia SIRO
+ * @author SIRO
  */
 public class RegisterAuthor extends javax.swing.JFrame {
 
@@ -30,7 +30,7 @@ public class RegisterAuthor extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jTextFieldName = new javax.swing.JTextField();
-        Code = new javax.swing.JTextField();
+        jTextFieldCode = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
         jButtonNew = new javax.swing.JButton();
         jButtonSave = new javax.swing.JButton();
@@ -76,7 +76,7 @@ public class RegisterAuthor extends javax.swing.JFrame {
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(jLabel2)
                                 .addGap(18, 18, 18)
-                                .addComponent(Code, javax.swing.GroupLayout.PREFERRED_SIZE, 268, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(jTextFieldCode, javax.swing.GroupLayout.PREFERRED_SIZE, 268, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(jLabel3)
                                 .addGap(18, 18, 18)
@@ -100,7 +100,7 @@ public class RegisterAuthor extends javax.swing.JFrame {
                 .addGap(43, 43, 43)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel2)
-                    .addComponent(Code, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jTextFieldCode, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(29, 29, 29)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jTextFieldName, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -158,7 +158,6 @@ public class RegisterAuthor extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JTextField Code;
     public javax.swing.JButton jButtonEdit;
     public javax.swing.JButton jButtonNew;
     private javax.swing.JButton jButtonRegresar;
@@ -166,6 +165,7 @@ public class RegisterAuthor extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    public javax.swing.JTextField jTextFieldCode;
     public javax.swing.JTextField jTextFieldName;
     // End of variables declaration//GEN-END:variables
 }

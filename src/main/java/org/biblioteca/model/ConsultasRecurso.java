@@ -262,4 +262,38 @@ public class ConsultasRecurso extends Conexion {
             }
         }
     }
+    
+    public boolean registerAuthor(Author author) {
+        PreparedStatement ps = null;
+        Connection con = getConexion();
+        ResultSet rs = null; 
+        String sql = "INSERT INTO autor (code, namea) VALUES(?,?)";
+        try {
+            ps = con.prepareStatement(sql); //, PreparedStatement.RETURN_GENERATED_KEYS//);
+            ps.setInt(1, author.getCode());
+            ps.setString(2, author.getName());
+            ps.execute();
+            // Ejecutar la inserción
+            /*int affectedRows = ps.executeUpdate();
+            
+            if (affectedRows > 0) {
+                // Obtener el ID generado
+                rs = ps.getGeneratedKeys();
+                if (rs.next()) {
+                    long generatedId = rs.getLong(1); 
+                    author.setCode((int) generatedId);                                                            
+                }
+            }*/
+            return true;
+        } catch (SQLException e) {
+            System.err.println(e);
+            return false;
+        } finally {
+            try {
+                con.close();
+            } catch (SQLException e) {
+                System.err.println(e);
+            }
+        }
+    }
 }

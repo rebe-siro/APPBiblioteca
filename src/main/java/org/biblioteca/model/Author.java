@@ -16,6 +16,9 @@ public class Author {
         this.code = code;
         this.name = name;
     }
+    
+    public Author() {
+    }
 
     public int getCode() {
         return code;

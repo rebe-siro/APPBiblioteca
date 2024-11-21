@@ -6,11 +6,12 @@ package org.biblioteca.controller;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
+import java.sql.ResultSet;  
 import javax.swing.JOptionPane;
-import org.biblioteca.model.ConsultasRecurso;
 import org.biblioteca.model.Author;
+import org.biblioteca.model.ConsultasRecurso;
 import org.biblioteca.view.RegisterAuthor;
-import java.sql.ResultSet;
+
 
 /**
  *
@@ -40,12 +41,14 @@ public class AuthorController implements ActionListener {
         
         if (e.getSource() == view.jButtonSave) {
             try {
+                model.setCode(Integer.parseInt(view.jTextFieldCode.getText()));
                 model.setName(view.jTextFieldName.getText());
-                    
-                }  catch (NumberFormatException ex) {
+                JOptionPane.showMessageDialog(null, "Recurso Guardado");   
+            }  catch (NumberFormatException ex) {
                 JOptionPane.showMessageDialog(null, "Error al Registrar el Autor");
             }        
 
         }
     }
+    
 }
