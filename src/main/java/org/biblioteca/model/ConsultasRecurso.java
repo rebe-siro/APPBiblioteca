@@ -263,18 +263,17 @@ public class ConsultasRecurso extends Conexion {
         }
     }
     
-    public boolean registerAuthor(Author author) {
+    public Author registerAuthor(Author author) {
         PreparedStatement ps = null;
         Connection con = getConexion();
         ResultSet rs = null; 
-        String sql = "INSERT INTO autor (code, namea) VALUES(?,?)";
+        String sql = "INSERT INTO autor (namea) VALUES(?)";
         try {
-            ps = con.prepareStatement(sql); //, PreparedStatement.RETURN_GENERATED_KEYS//);
-            ps.setInt(1, author.getCode());
-            ps.setString(2, author.getName());
-            ps.execute();
+            ps = con.prepareStatement(sql, PreparedStatement.RETURN_GENERATED_KEYS);
+            //ps.setInt(1, author.getCode());
+            ps.setString(1, author.getName());
             // Ejecutar la inserción
-            /*int affectedRows = ps.executeUpdate();
+            int affectedRows = ps.executeUpdate();
             
             if (affectedRows > 0) {
                 // Obtener el ID generado
@@ -283,7 +282,31 @@ public class ConsultasRecurso extends Conexion {
                     long generatedId = rs.getLong(1); 
                     author.setCode((int) generatedId);                                                            
                 }
-            }*/
+            }
+            return author;
+        } catch (SQLException e) {
+            System.err.println(e);
+            return author;
+        } finally {
+            try {
+                con.close();
+            } catch (SQLException e) {
+                System.err.println(e);
+            }
+        }
+    }
+    
+    public boolean registerAuthorResource(AuthorResource authorR) {
+        PreparedStatement ps = null;
+        Connection con = getConexion();
+        ResultSet rs = null; 
+        String sql = "INSERT INTO autor_x_recurso ( codeAutor, codeResource, description) VALUES(?,?,?)";
+        try {
+            ps = con.prepareStatement(sql);
+            ps.setInt(1, authorR.getCodeAuthor());
+            ps.setInt(2, authorR.getCodeResource());
+            ps.setString(3, authorR.getDescription());
+            ps.execute();            
             return true;
         } catch (SQLException e) {
             System.err.println(e);
@@ -294,6 +317,6 @@ public class ConsultasRecurso extends Conexion {
             } catch (SQLException e) {
                 System.err.println(e);
             }
-        }
+        } 
     }
 }

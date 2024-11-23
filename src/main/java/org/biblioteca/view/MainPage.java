@@ -15,6 +15,7 @@ import org.biblioteca.model.Resources;
 import org.biblioteca.model.Loan;
 import org.biblioteca.model.User;
 import org.biblioteca.model.Author;
+import org.biblioteca.model.AuthorResource;
 import org.biblioteca.model.UserConsults;
 import org.biblioteca.model.LoanResources;
 
@@ -215,9 +216,11 @@ public class MainPage extends javax.swing.JFrame {
 
     private void jButtonAuthorMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButtonAuthorMouseClicked
         RegisterAuthor view = new RegisterAuthor();
-        Author model = new Author();
+        Resources model = new Resources();
+        Author modelAuthor = new Author();
+        AuthorResource modelAuthorResource = new AuthorResource();
         ConsultasRecurso querys = new ConsultasRecurso();
-        AuthorController author = new AuthorController(model, querys, view);
+        AuthorController author = new AuthorController(model, modelAuthor, modelAuthorResource, querys, view);
         view.setVisible(true);       // TODO add your handling code here:
     }//GEN-LAST:event_jButtonAuthorMouseClicked
 
