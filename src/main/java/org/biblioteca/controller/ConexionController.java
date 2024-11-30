@@ -20,7 +20,7 @@ import org.biblioteca.model.Conexion;
 
 public class ConexionController {
     private Conexion conexionDB;
-
+    /*
     public ConexionController() {
         conexionDB = new Conexion();
     }
@@ -41,4 +41,5 @@ public class ConexionController {
         }
         return lista;
     }
+*/
 }

@@ -17,11 +17,11 @@ import java.util.HashSet;
 import java.util.Set;
 
 
-public class ConsultasRecurso extends Conexion {
+public class ConsultasRecurso {
     
     public boolean register(Resources reso) {
         PreparedStatement ps = null;
-        Connection con = getConexion();
+        Connection con = Conexion.getConexion();
 
         String sql = "INSERT INTO recurso (code, title, author, type, status) VALUES(?,?,?,?,?)";
 
@@ -38,8 +38,8 @@ public class ConsultasRecurso extends Conexion {
             System.err.println(e);
             return false;
         } finally {
-            try {
-                con.close();
+            try {                
+                con.clearWarnings();
             } catch (SQLException e) {
                 System.err.println(e);
             }
@@ -48,7 +48,7 @@ public class ConsultasRecurso extends Conexion {
 
     public boolean save(Resources reso) {
         PreparedStatement ps = null;
-        Connection con = getConexion();
+        Connection con = Conexion.getConexion();
 
         String sql = "UPDATE recurso SET title=?, author=?, type=?, status=? WHERE code=? ";
 
@@ -66,7 +66,7 @@ public class ConsultasRecurso extends Conexion {
             return false;
         } finally {
             try {
-                con.close();
+                con.clearWarnings();
             } catch (SQLException e) {
                 System.err.println(e);
             }
@@ -75,7 +75,7 @@ public class ConsultasRecurso extends Conexion {
 
     public boolean delete(Resources reso) {
         PreparedStatement ps = null;
-        Connection con = getConexion();
+        Connection con = Conexion.getConexion();
 
         String sql = "UPDATE recurso SET status = false WHERE code=? ";
 
@@ -89,7 +89,7 @@ public class ConsultasRecurso extends Conexion {
             return false;
         } finally {
             try {
-                con.close();
+                con.clearWarnings();
             } catch (SQLException e) {
                 System.err.println(e);
             }
@@ -99,7 +99,7 @@ public class ConsultasRecurso extends Conexion {
     public boolean search(Resources reso) {
         PreparedStatement ps = null;
         ResultSet rs = null;
-        Connection con = getConexion();
+        Connection con = Conexion.getConexion();
 
         String sql = "SELECT * FROM recurso WHERE code = ? ";
 
@@ -122,7 +122,7 @@ public class ConsultasRecurso extends Conexion {
             return false;
         } finally {
             try {
-                con.close();
+                con.clearWarnings();
             } catch (SQLException e) {
                 System.err.println(e);
             }
@@ -132,7 +132,7 @@ public class ConsultasRecurso extends Conexion {
     public ResultSet list() {
         PreparedStatement ps = null;
         ResultSet rs = null;
-        Connection con = getConexion();
+        Connection con = Conexion.getConexion();
         String sql = "SELECT code as Código, title as Título, author as Autor, type as Tipo, status as Estatus "
                     + " FROM recurso order by code asc";
 
@@ -145,8 +145,8 @@ public class ConsultasRecurso extends Conexion {
             System.err.println(e);
             return null;
         } finally {
-            try {
-                con.close();
+            try {                
+                con.clearWarnings();
             } catch (SQLException e) {
                 System.err.println(e);
             }
@@ -156,7 +156,7 @@ public class ConsultasRecurso extends Conexion {
     public ResultSet listTypeResource() {
         PreparedStatement ps = null;
         ResultSet rs = null;
-        Connection con = getConexion();
+        Connection con = Conexion.getConexion();
         String sql = "SELECT * FROM tipo_recurso ";
 
         try {
@@ -168,7 +168,7 @@ public class ConsultasRecurso extends Conexion {
             return null;
         } finally {
             try {
-                con.close();
+                con.clearWarnings();
             } catch (SQLException e) {
                 System.err.println(e);
             }
@@ -178,7 +178,7 @@ public class ConsultasRecurso extends Conexion {
     public ResultSet listAvailables() {
         PreparedStatement ps = null;
         ResultSet rs = null;
-        Connection con = getConexion();
+        Connection con = Conexion.getConexion();
         String sql = "SELECT code as Código, title as Título, author as Autor, type as Tipo, status as Estatus "
                     + " FROM recurso where status = true order by code asc";
 
@@ -192,7 +192,7 @@ public class ConsultasRecurso extends Conexion {
             return null;
         } finally {
             try {
-                con.close();
+                con.clearWarnings();
             } catch (SQLException e) {
                 System.err.println(e);
             }
@@ -201,7 +201,7 @@ public class ConsultasRecurso extends Conexion {
 
     public Loan registerLoan(Loan loan) {
         PreparedStatement ps = null;
-        Connection con = getConexion();
+        Connection con = Conexion.getConexion();
         ResultSet rs = null; 
         String sql = "INSERT INTO prestamo ( userLoan, start_date, end_date, status, userregister) VALUES(?,?,?,?,?)";
         // Convertir java.util.Date a java.sql.Date
@@ -232,7 +232,7 @@ public class ConsultasRecurso extends Conexion {
             return loan;
         } finally {
             try {
-                con.close();
+                con.clearWarnings();
             } catch (SQLException e) {
                 System.err.println(e);
             }
@@ -241,7 +241,7 @@ public class ConsultasRecurso extends Conexion {
 
     public boolean registerLoanResources(LoanResources loanR) {
         PreparedStatement ps = null;
-        Connection con = getConexion();
+        Connection con = Conexion.getConexion();
         ResultSet rs = null; 
         String sql = "INSERT INTO prestamo_x_recurso ( code, codeResource, description) VALUES(?,?,?)";
         try {
@@ -256,7 +256,7 @@ public class ConsultasRecurso extends Conexion {
             return false;
         } finally {
             try {
-                con.close();
+                con.clearWarnings();
             } catch (SQLException e) {
                 System.err.println(e);
             }
@@ -265,7 +265,7 @@ public class ConsultasRecurso extends Conexion {
     
     public Author registerAuthor(Author author) {
         PreparedStatement ps = null;
-        Connection con = getConexion();
+        Connection con = Conexion.getConexion();
         ResultSet rs = null; 
         String sql = "INSERT INTO autor (namea) VALUES(?)";
         try {
@@ -289,7 +289,7 @@ public class ConsultasRecurso extends Conexion {
             return author;
         } finally {
             try {
-                con.close();
+                con.clearWarnings();
             } catch (SQLException e) {
                 System.err.println(e);
             }
@@ -298,7 +298,7 @@ public class ConsultasRecurso extends Conexion {
     
     public boolean registerAuthorResource(AuthorResource authorR) {
         PreparedStatement ps = null;
-        Connection con = getConexion();
+        Connection con = Conexion.getConexion();
         ResultSet rs = null; 
         String sql = "INSERT INTO autor_x_recurso ( codeAutor, codeResource, description) VALUES(?,?,?)";
         try {
@@ -313,7 +313,7 @@ public class ConsultasRecurso extends Conexion {
             return false;
         } finally {
             try {
-                con.close();
+                con.clearWarnings();
             } catch (SQLException e) {
                 System.err.println(e);
             }

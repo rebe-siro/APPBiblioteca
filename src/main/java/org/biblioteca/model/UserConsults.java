@@ -13,11 +13,11 @@ import java.sql.SQLException;
  *
  * @author HP
  */
-public class UserConsults extends Conexion {
+public class UserConsults {
     
     public boolean register(User u) {
         PreparedStatement ps = null;
-        Connection con = getConexion();
+        Connection con = Conexion.getConexion();
 
         String sql = "INSERT INTO Usuario (username, lastname, identification, career, typeuser, status) VALUES(?,?,?,?,?,true)";
         
@@ -37,7 +37,7 @@ public class UserConsults extends Conexion {
             return false;
         } finally {
             try {
-                con.close();
+                con.clearWarnings();
             } catch (SQLException e) {
                 System.err.println(e);
             }
@@ -47,7 +47,7 @@ public class UserConsults extends Conexion {
     public ResultSet listUserType() {
         PreparedStatement ps = null;
         ResultSet rs = null;
-        Connection con = getConexion();
+        Connection con = Conexion.getConexion();
         String sql = "SELECT * FROM tipo_usuario";
 
         try {
@@ -59,7 +59,7 @@ public class UserConsults extends Conexion {
             return null;
         } finally {
             try {
-                con.close();
+                con.clearWarnings();
             } catch (SQLException e) {
                 System.err.println(e);
             }
@@ -69,7 +69,7 @@ public class UserConsults extends Conexion {
     public ResultSet listCareer() {
         PreparedStatement ps = null;
         ResultSet rs = null;
-        Connection con = getConexion();
+        Connection con = Conexion.getConexion();
         String sql = "SELECT * FROM carrera";
 
         try {
@@ -81,7 +81,7 @@ public class UserConsults extends Conexion {
             return null;
         } finally {
             try {
-                con.close();
+                con.clearWarnings();
             } catch (SQLException e) {
                 System.err.println(e);
             }

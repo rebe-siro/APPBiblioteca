@@ -10,32 +10,45 @@ import java.sql.DriverManager;
  * @author Rebe
  */
 public class Conexion {
-    Connection con = null;
+    
+    private static Connection conn = null;
+    private String dbname;
+    private String url;
+    private String user;
+    private String password;
+	
+ 
+    // Constructor
+    private Conexion(){
+ 
+        String dbname = "BDLaboratorio";
+        String url = "jdbc:postgresql://localhost:5432/";
+        String user = "postgres";
+        String password = "sistema";
 
-    String dbname = "BDLaboratorio";
-    String url = "jdbc:postgresql://localhost:5432/";
-    String user = "postgres";
-    String password = "sistema";
+        try{
+                 //Class.forName(driver);
+                 conn = DriverManager.getConnection(url + dbname, user, password);
+                if(conn!=null)
+                {
+                    System.out.println("Connection established successfully !");
+                }
+                else
+                {
+                    System.out.println("Connection failed !!");
+                }			 
+        }
+        catch(Exception e){
+            e.printStackTrace();
+        }
+    } // Fin constructor	
 
-    public Connection getConexion()
+    public static Connection getConexion()
     {
-        Connection con_obj=null;        
-        try
-        {
-            con_obj= DriverManager.getConnection(url + dbname,user,password);
-            if(con_obj!=null)
-            {
-                System.out.println("Connection established successfully !");
-            }
-            else
-            {
-                System.out.println("Connection failed !!");
-            }
-        }
-        catch (Exception e)
-        {
-            System.out.println(e.getMessage());
-        }
-        return con_obj;
+		 if (conn == null){
+			 new Conexion();
+		 }
+		 return conn;		
+		 
     }    
 }
