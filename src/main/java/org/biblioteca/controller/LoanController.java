@@ -9,7 +9,9 @@ import java.awt.event.ActionListener;
 import java.sql.Date;
 import java.time.LocalDate;
 import java.time.ZoneId;
+import java.util.ArrayList;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 import javax.swing.JOptionPane;
 import org.biblioteca.model.ConsultasRecurso;
@@ -74,16 +76,21 @@ public class LoanController implements ActionListener{
                 Loan loanReg = querys.registerLoan(modelLoan);
                 if (loanReg.getCode() > 0) {
                     //registrar detalle
-                    int selectedRow = view.jTableResources.getSelectedRow();
-                    if (selectedRow != -1) {
-                        modelLoanReso.setCode(loanReg.getCode());
-                        modelLoanReso.setCodeResource((int) view.jTableResources.getValueAt(selectedRow, 0));
-                        modelLoanReso.setDescription((String) view.jTableResources.getValueAt(selectedRow, 1));
-                        querys.registerLoanResources(modelLoanReso);
-                        JOptionPane.showMessageDialog(null, "Prestamo Registrado");                        
-                        showTableResources();
-                        clean();
-                    }
+                    int[] rows = view.jTableResources.getSelectedRows();
+                    int selectedRow = 0;
+                    for (int i=0; i < rows.length; i++){
+                        selectedRow = rows[i];
+                        if (selectedRow != -1) {
+                            modelLoanReso.setCode(loanReg.getCode());
+                            modelLoanReso.setCodeResource((int) view.jTableResources.getValueAt(selectedRow, 0));
+                            modelLoanReso.setDescription((String) view.jTableResources.getValueAt(selectedRow, 1));
+                            querys.registerLoanResources(modelLoanReso);
+                        }                        
+                    } 
+                    JOptionPane.showMessageDialog(null, "Prestamo Registrado");                        
+                    showTableResources();
+                    clean();                    
+                    
                 } else {
                     JOptionPane.showMessageDialog(null, "Error al Registrar Prestamo");
                 }

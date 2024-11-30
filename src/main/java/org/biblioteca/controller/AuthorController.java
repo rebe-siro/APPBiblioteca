@@ -42,24 +42,37 @@ public class AuthorController implements ActionListener {
     public void start() {
         view.setTitle("Autores");
         view.setLocationRelativeTo(null);
+        
     }
+    
     
     @Override
     public void actionPerformed(ActionEvent e) {
         
-        if (e.getSource() == view.jButtonSave) {
-            try {
-                //model.setCode(Integer.parseInt(view.jTextFieldCode.getText()));
-                modelAuthor.setName(view.jTextFieldName.getText());
-                
-                Author authorReg = querys.registerAuthor(modelAuthor);
-                querys.registerAuthorResource(modelAuthorResource);
-                JOptionPane.showMessageDialog(null, "Recurso Guardado");   
-            }  catch (NumberFormatException ex) {
-                JOptionPane.showMessageDialog(null, "Error al Registrar el Autor");
-            }        
+            if (e.getSource() == view.jButtonSave) {
+                try {
+                    modelAuthor.setName(view.jTextFieldName.getText());
+                    if ((Integer.parseInt(view.jTextFieldCode.getText())) > 0 ) {
+                        modelAuthor.setCode((Integer.parseInt(view.jTextFieldCode.getText())));                        
+                        //save
+                        JOptionPane.showMessageDialog(null, "Autor Actualizado"); 
+                        //view.jTextFieldCode.setText(String.valueOf(authorReg.getCode()));                        
+                    } else {
+                        Author authorReg = querys.registerAuthor(modelAuthor);
+                        if (authorReg.getCode() > 0) {
+                            JOptionPane.showMessageDialog(null, "Autor Registrado"); 
+                            view.jTextFieldCode.setText(String.valueOf(authorReg.getCode()));
+                        }                    
+                    }                                                           
+
+
+                }  catch (NumberFormatException ex) {
+                    JOptionPane.showMessageDialog(null, "Error al Registrar el Autor");
+                }
+            }
+
+
 
         }
-    }
     
 }

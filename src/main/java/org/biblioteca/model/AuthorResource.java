@@ -16,11 +16,11 @@ public class AuthorResource {
     public AuthorResource(){   
     }
 
-    public AuthorResource(int codeResource, int codeAuthor, String description) {
+    /*public AuthorResource(int codeResource, int codeAuthor, String description) {
         this.codeResource = codeResource;
         this.codeAuthor = codeAuthor;
         this.description = description;
-    }
+    }*/
 
     public int getCodeResource() {
         return codeResource;

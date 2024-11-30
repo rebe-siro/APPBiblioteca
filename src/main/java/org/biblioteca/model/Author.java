@@ -12,14 +12,14 @@ public class Author {
     private int code;
     private String name;
 
+    public Author() {
+    }
+
     public Author(int code, String name) {
         this.code = code;
         this.name = name;
     }
     
-    public Author() {
-    }
-
     public int getCode() {
         return code;
     }

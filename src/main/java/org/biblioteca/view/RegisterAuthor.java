@@ -4,6 +4,9 @@
  */
 package org.biblioteca.view;
 import java.awt.event.MouseAdapter;
+import java.util.List;
+import javax.swing.table.DefaultTableModel;
+//import org.biblioteca.controller.ConexionController;
 
 /**
  *
