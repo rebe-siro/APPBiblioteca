@@ -1,0 +1,23 @@
+Chicos cambie una cosita de la base de datos, le agregue una tabla, que la vamos a llamar "sancionados" y otra llamada "tipo_sancion"
+
+Coloquen las siguientes sentencias:
+
+CREATE TABLE sancionados (
+    code SERIAL PRIMARY KEY,
+    code_tsanction INT,
+    code_user INT,
+    star_date DATE,
+    end_date DATE,
+    status BOOLEAN,
+    FOREIGN KEY (code_tsanction) REFERENCES tipo_sancion(code)
+    FOREIGN KEY (code_user) REFERENCES usuario(code)
+);
+
+
+CREATE TABLE tipo_sancion(
+    code SERIAL PRIMARY KEY,
+    namesanction VARCHAR(255),
+    days INT,
+    status BOOLEAN,
+);
+
