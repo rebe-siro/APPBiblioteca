@@ -46,27 +46,43 @@ public class UserController implements ActionListener {
 
     }
 
-    @Override
+        @Override
     public void actionPerformed(ActionEvent e) {
 
         if (e.getSource() == view.userRegister) {
-            
-                    model.setName(view.name.getText());
-                    model.setLastName(view.lastName.getText());                                 
-                    model.setIdentification(view.identification.getText());
-                    model.setCareer(view.career.getText());
-                    //model.setCareer(view.career.getSelectedIndex());
-                    model.setType(view.userType.getSelectedIndex());
                     
-                    {
-                        if (querys.register(model)) {
-                            JOptionPane.showMessageDialog(null, "Usuario Registrado");
-                            clean();
-                        } else {
-                            JOptionPane.showMessageDialog(null, "Error al Registrar, verifique que este Usuario no esté registrado");
-                        }
-                    }
+                    if (e.getSource() == view.userRegister) { 
+                        
+                        String identification = view.identification.getText();
             
+                        String cleanIdentification = identification.replaceAll("[^\\d]", ""); 
+                    
+                        int code; 
+                        try { 
+                            code = Integer.parseInt(cleanIdentification); 
+                        } catch (NumberFormatException ex) { 
+                            ex.printStackTrace(); JOptionPane.showMessageDialog(null, "La identificación debe contener solo números."); 
+                            return; // Salir del método si la identificación no es un número válido 
+                        }
+                    
+                        model.setCode(code);
+                        model.setName(view.name.getText());
+                        model.setLastName(view.lastName.getText());                                 
+                        model.setIdentification(view.identification.getText());
+                        model.setCareer(view.career.getText());
+                        //model.setCareer(view.career.getSelectedIndex());
+                        model.setType(view.userType.getSelectedIndex());
+                    
+                        {
+                            if (querys.register(model)) {
+                                JOptionPane.showMessageDialog(null, "Usuario Registrado");
+                                clean();
+                            } else {
+                                JOptionPane.showMessageDialog(null, "Error al Registrar, verifique que este Usuario no esté registrado");
+                            }
+                        }
+            
+            }
         }
 }
 
