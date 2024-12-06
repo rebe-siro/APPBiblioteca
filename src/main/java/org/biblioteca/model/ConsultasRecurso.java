@@ -292,6 +292,29 @@ public class ConsultasRecurso {
             }
         }
     }
+    public boolean registerAuthorResources(AuthorResource authorR) {
+        PreparedStatement ps = null;
+        Connection con = Conexion.getConexion();
+        ResultSet rs = null; 
+        String sql = "INSERT INTO autor_x_recurso ( codeautor, coderecurso, description) VALUES(?,?,?)";
+        try {
+            ps = con.prepareStatement(sql);
+            ps.setInt(1, authorR.getCodeAuthor());
+            ps.setInt(2, authorR.getCodeResource());
+            ps.setString(3, authorR.getDescription());
+            ps.execute();            
+            return true;
+        } catch (SQLException e) {
+            System.err.println(e);
+            return false;
+        } finally {
+            try {
+                con.clearWarnings();
+            } catch (SQLException e) {
+                System.err.println(e);
+            }
+        }
+    }
     
     public boolean updateAvailableResources(int codeResource) {
         PreparedStatement ps = null;
