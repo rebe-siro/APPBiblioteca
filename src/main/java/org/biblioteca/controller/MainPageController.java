@@ -2,18 +2,18 @@
 Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template */
 
 package org.biblioteca.controller; 
-import org.biblioteca.view.MainPage; 
+import org.biblioteca.view.BasicMainPage; 
 import java.awt.event.ActionEvent; 
 import java.awt.event.ActionListener; 
 import org.biblioteca.view.LoanView; 
 import org.biblioteca.view.ResourcesManager; 
 
 public class MainPageController {
-    private MainPage mp; 
+    private BasicMainPage mp; 
     private ResourcesManager rm; 
     private LoanView lv; 
     
-public MainPageController(MainPage mp, ResourcesManager rm, LoanView lv) { 
+public MainPageController(BasicMainPage mp, ResourcesManager rm, LoanView lv) { 
     this.mp = mp; 
     this.rm = rm; 
     this.lv = lv; 
