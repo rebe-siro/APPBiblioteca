@@ -15,8 +15,7 @@ public class Biblioteca {
 
     public static void main(String[] args) { 
         
-        Conexion cn = new Conexion();
-        cn.getConexion();
+        Conexion.getConexion();
         
         UserConsults uc = new UserConsults();
         
