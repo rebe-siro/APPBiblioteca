@@ -19,17 +19,17 @@ public class UserConsults {
         PreparedStatement ps = null;
         Connection con = Conexion.getConexion();
 
-        String sql = "INSERT INTO Usuario (code, username, lastname, identification, career, typeuser, status) VALUES(?,?,?,?,?,?,true)";
+        String sql = "INSERT INTO Usuario (username, lastname, identification, career, typeuser, status) VALUES(?,?,?,?,?,true)";
         
         
         try {
             ps = con.prepareStatement(sql, PreparedStatement.RETURN_GENERATED_KEYS);
-            ps.setInt(1, u.getCode());
-            ps.setString(2, u.getName());
-            ps.setString(3, u.getLastName());
-            ps.setString(4, u.getIdentification());
-            ps.setString(5, u.getCareer());
-            ps.setInt(6, u.getType());
+            //ps.setInt(1, u.getCode());
+            ps.setString(1, u.getName());
+            ps.setString(2, u.getLastName());
+            ps.setString(3, u.getIdentification());
+            ps.setString(4, u.getCareer());
+            ps.setInt(5, u.getType());
             ps.execute();
             return true;
         } catch (SQLException e) {
@@ -37,7 +37,7 @@ public class UserConsults {
             return false;
         } finally {
             try {
-                con.close();
+                con.clearWarnings();
             } catch (SQLException e) {
                 System.err.println(e);
             }
