@@ -213,7 +213,7 @@ public class ConsultasRecurso {
         java.sql.Date sqlDateEnd  = new java.sql.Date(loan.getEnd_Date().getTime()); 
         try {
             ps = con.prepareStatement(sql, PreparedStatement.RETURN_GENERATED_KEYS);
-            ps.setString(1, loan.getUserLoan());
+            ps.setInt(1, loan.getUserLoan());
             ps.setDate(2, sqlDate);
             ps.setDate(3, sqlDateEnd);
             ps.setBoolean(4, loan.isStatus());
