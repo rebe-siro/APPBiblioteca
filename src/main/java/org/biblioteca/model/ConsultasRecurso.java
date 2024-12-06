@@ -182,8 +182,8 @@ public class ConsultasRecurso {
         PreparedStatement ps = null;
         ResultSet rs = null;
         Connection con = Conexion.getConexion();
-        String sql = "SELECT code as Código, title as Título, author as Autor, type as Tipo, status as Estatus "
-                    + " FROM recurso where status = true order by code asc";
+        String sql = "SELECT code as Código, title as Título, author as Autor, type as Tipo, status as Estatus, available as Disponible "
+                    + " FROM recurso where status = true and available > 0 order by code asc";
 
         try {
             ps = con.prepareStatement(sql);            
@@ -266,6 +266,28 @@ public class ConsultasRecurso {
         }
     }
     
+    public boolean updateAvailableResources(int codeResource) {
+        PreparedStatement ps = null;
+        Connection con = Conexion.getConexion();
+        ResultSet rs = null; 
+        String sql = "update recurso set available = (available - 1) where code = ? ";
+        try {
+            ps = con.prepareStatement(sql);
+            ps.setInt(1, codeResource);
+            ps.execute();            
+            return true;
+        } catch (SQLException e) {
+            System.err.println(e);
+            return false;
+        } finally {
+            try {
+                con.clearWarnings();
+            } catch (SQLException e) {
+                System.err.println(e);
+            }
+        }
+    }
+
     public Author registerAuthor(Author author) {
         PreparedStatement ps = null;
         Connection con = Conexion.getConexion();

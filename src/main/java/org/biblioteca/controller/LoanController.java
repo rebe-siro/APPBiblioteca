@@ -85,6 +85,7 @@ public class LoanController implements ActionListener{
                             modelLoanReso.setCodeResource((int) view.jTableResources.getValueAt(selectedRow, 0));
                             modelLoanReso.setDescription((String) view.jTableResources.getValueAt(selectedRow, 1));
                             querys.registerLoanResources(modelLoanReso);
+                            querys.updateAvailableResources(modelLoanReso.getCodeResource());
                         }                        
                     } 
                     JOptionPane.showMessageDialog(null, "Prestamo Registrado");                        

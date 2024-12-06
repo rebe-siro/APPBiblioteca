@@ -25,7 +25,7 @@ public class LoanView extends javax.swing.JFrame {
     public LoanView() {
         initComponents();
         //cc = new ConexionController();        
-        String ids [] = {"Código", "Título", "Autor", "Tipo", "Estatus"};
+        String ids [] = {"Código", "Título", "Autor", "Tipo", "Estatus","Disponible"};
         dt.setColumnIdentifiers(ids);
         jTableResources.setModel(dt);        
 
