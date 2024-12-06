@@ -5,6 +5,7 @@
 package org.biblioteca.model;
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.SQLException;
 /**
  *
  * @author Rebe
@@ -21,10 +22,10 @@ public class Conexion {
     // Constructor
     private Conexion(){
  
-        String dbname = "BDLaboratorio";
+        String dbname = "APPBiblioteca";
         String url = "jdbc:postgresql://localhost:5432/";
         String user = "postgres";
-        String password = "sistema";
+        String password = "051103";
 
         try{
                  //Class.forName(driver);
@@ -43,12 +44,21 @@ public class Conexion {
         }
     } // Fin constructor	
 
-    public static Connection getConexion()
-    {
-		 if (conn == null){
-			 new Conexion();
-		 }
-		 return conn;		
-		 
-    }    
+    // Método para obtener la conexión
+    public static Connection getConexion() {
+        if (conn == null || !isConnectionValid()) {
+            new Conexion();
+        }
+        return conn;
+    }
+
+    // Método para verificar si la conexión es válida
+    private static boolean isConnectionValid() {
+        try {
+            return conn != null && !conn.isClosed();
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return false;
+        }
+    }
 }

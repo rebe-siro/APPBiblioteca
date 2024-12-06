@@ -68,4 +68,22 @@ public class UserConsults {
             return false;
         }
     }
+
+
+    public int getUserType(String username) {
+        String sql = "SELECT typeuser FROM usuario WHERE username = ?";
+        try (Connection con = Conexion.getConexion();
+             PreparedStatement ps = con.prepareStatement(sql)) {
+            ps.setString(1, username);
+            try (ResultSet rs = ps.executeQuery()) {
+                if (rs.next()) {
+                    return rs.getInt("typeuser");
+                }
+            }
+        } catch (SQLException e) {
+            System.err.println("Error executing query: " + e.getMessage());
+        }
+        System.err.println("User not found or query error.");
+        return -1; // Usuario no encontrado o error en la consulta
+    }
 }
