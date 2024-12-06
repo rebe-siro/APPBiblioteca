@@ -34,7 +34,7 @@ public class AuthorController implements ActionListener {
         this.modelAuthorResource = modelAuthorResource;
         this.querys = querys;
         this.view = view;
-        this.view.jButtonNew.addActionListener(this);
+        //this.view.jButtonNew.addActionListener(this);
         this.view.jButtonSave.addActionListener((ActionListener) this);
         start();            
     }
@@ -52,27 +52,25 @@ public class AuthorController implements ActionListener {
             if (e.getSource() == view.jButtonSave) {
                 try {
                     modelAuthor.setName(view.jTextFieldName.getText());
-                    if ((Integer.parseInt(view.jTextFieldCode.getText())) > 0 ) {
-                        modelAuthor.setCode((Integer.parseInt(view.jTextFieldCode.getText())));                        
+                    Author authorReg = querys.registerAuthor(modelAuthor);
+                    JOptionPane.showMessageDialog(null, "Autor Registrado con código: " + authorReg.getCode());
+                    view.jTextFieldName.setText(""); 
+                    //if ((Integer.parseInt(view.jTextFieldCode.getText())) > 0 ) {
+                      //  modelAuthor.setCode((Integer.parseInt(view.jTextFieldCode.getText())));                        
                         //save
-                        JOptionPane.showMessageDialog(null, "Autor Actualizado"); 
+                     //   JOptionPane.showMessageDialog(null, "Autor Actualizado"); 
                         //view.jTextFieldCode.setText(String.valueOf(authorReg.getCode()));                        
-                    } else {
-                        Author authorReg = querys.registerAuthor(modelAuthor);
-                        if (authorReg.getCode() > 0) {
-                            JOptionPane.showMessageDialog(null, "Autor Registrado"); 
-                            view.jTextFieldCode.setText(String.valueOf(authorReg.getCode()));
-                        }                    
-                    }                                                           
-
-
-                }  catch (NumberFormatException ex) {
-                    JOptionPane.showMessageDialog(null, "Error al Registrar el Autor");
+                //  } else {
+                      //  Author authorReg = querys.registerAuthor(modelAuthor);
+                       // if (authorReg.getCode() > 0) {
+                        //    JOptionPane.showMessageDialog(null, "Autor Registrado"); 
+                       //     view.jTextFieldCode.setText(String.valueOf(authorReg.getCode()));
+                       // }                    
+                    } catch (NumberFormatException ex) {
+                        JOptionPane.showMessageDialog(null, "Error al Registrar el Autor: " + ex.getMessage());
+                        ex.printStackTrace(); //
                 }
             }
-
-
-
-        }
+    }
     
 }

@@ -11,7 +11,7 @@ import org.biblioteca.controller.ResourcesController;
 import org.biblioteca.controller.UserController;
 import org.biblioteca.controller.SanctionController;
 import org.biblioteca.controller.ApplySanctionController;
-import org.biblioteca.controller.ReturnsController;
+//import org.biblioteca.controller.ReturnsController;
 
 
 import org.biblioteca.model.ConsultasRecurso;
@@ -25,7 +25,7 @@ import org.biblioteca.model.LoanResources;
 import org.biblioteca.model.Sanctions;
 import org.biblioteca.model.SanctionsConsults;
 import org.biblioteca.model.Return;
-import org.biblioteca.model.ReturnConsults;
+//import org.biblioteca.model.ReturnConsults;
 
 
 
@@ -316,8 +316,8 @@ public class MainPage extends javax.swing.JFrame {
     private void jButtonReturnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButtonReturnMouseClicked
         ReturnView view = new ReturnView();
         Return model = new Return();
-        ReturnConsults querys = new ReturnConsults();
-        ReturnsController returnC = new ReturnsController(model,querys,view);
+        //ReturnConsults querys = new ReturnConsults();
+       // ReturnsController returnC = new ReturnsController(model,querys,view);
         view.setVisible(true);
     }//GEN-LAST:event_jButtonReturnMouseClicked
 

@@ -43,6 +43,7 @@ public class ResourcesController implements ActionListener{
         fillComboStatus();
         fillComboType();
         refreshTable();
+        refreshTableAuthor();
     }
 
     @Override
@@ -123,11 +124,20 @@ public class ResourcesController implements ActionListener{
         }
     }
 
+    public void refreshTableAuthor(){
+        try {                                
+            view.jTableAuthor.setModel(DataTable.resultSetToTableModel(querys.listAuthor()));
+        } catch (Exception ex) {
+            JOptionPane.showMessageDialog(null, "Se ha producido un error en la tabla autor");
+            ex.printStackTrace();
+        }
+    }
+
     public void refreshTable(){
         try {                                
             view.jTableResources.setModel(DataTable.resultSetToTableModel(querys.list()));
         } catch (Exception ex) {
-            JOptionPane.showMessageDialog(null, "Se ha producido un error al refrescar");
+            JOptionPane.showMessageDialog(null, "Se ha producido un error en la tabla recursos");
             ex.printStackTrace();
         }
     }

@@ -156,6 +156,30 @@ public class ConsultasRecurso {
         }
     }
 
+    public ResultSet listAuthor() {
+        PreparedStatement ps = null;
+        ResultSet rs = null;
+        Connection con = Conexion.getConexion();
+        String sql = "SELECT code as Código, namea as Nombre"
+                    + " FROM autor order by code asc";
+
+        try {
+            ps = con.prepareStatement(sql);            
+            rs = ps.executeQuery();
+
+            return rs;
+        } catch (SQLException e) {
+            System.err.println(e);
+            return null;
+        } finally {
+            try {                
+                con.clearWarnings();
+            } catch (SQLException e) {
+                System.err.println(e);
+            }
+        }
+    }
+    
     public ResultSet listTypeResource() {
         PreparedStatement ps = null;
         ResultSet rs = null;
@@ -178,6 +202,9 @@ public class ConsultasRecurso {
         }
     }
 
+    
+    
+    
     public ResultSet listAvailables() {
         PreparedStatement ps = null;
         ResultSet rs = null;
@@ -202,7 +229,7 @@ public class ConsultasRecurso {
         }
     }
 
-    public Loan registerLoan(Loan loan) {
+     public Loan registerLoan(Loan loan) {
         PreparedStatement ps = null;
         Connection con = Conexion.getConexion();
         ResultSet rs = null; 
@@ -213,7 +240,7 @@ public class ConsultasRecurso {
         java.sql.Date sqlDateEnd  = new java.sql.Date(loan.getEnd_Date().getTime()); 
         try {
             ps = con.prepareStatement(sql, PreparedStatement.RETURN_GENERATED_KEYS);
-            ps.setInt(1, loan.getUserLoan());
+            ps.setString(1, loan.getUserLoan());
             ps.setDate(2, sqlDate);
             ps.setDate(3, sqlDateEnd);
             ps.setBoolean(4, loan.isStatus());
@@ -232,7 +259,7 @@ public class ConsultasRecurso {
             return loan;
         } catch (SQLException e) {
             System.err.println(e);
-            return loan;
+            return null;
         } finally {
             try {
                 con.clearWarnings();

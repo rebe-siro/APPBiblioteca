@@ -11,7 +11,7 @@ import java.util.Date;
 public class Loan {
     private int code;
     //private int codeUser;
-    private int userLoan;
+    private String userLoan;
     private Date star_Date;
     private Date end_Date;
     private boolean status;
@@ -20,7 +20,7 @@ public class Loan {
     public Loan() {
     }
 
-    public Loan(int code, int user, Date star_Date, Date end_Date, boolean status) {
+    public Loan(int code, String user, Date star_Date, Date end_Date, boolean status) {
         this.code = code;
         this.userLoan = user;
         this.star_Date = star_Date;
@@ -36,11 +36,11 @@ public class Loan {
         this.code = code;
     }
 
-    public int getUserLoan() {
+    public String getUserLoan() {
         return userLoan;
     }
 
-    public void setUserLoan(int userLoan) {
+    public void setUserLoan(String userLoan) {
         this.userLoan = userLoan;
     }
 
