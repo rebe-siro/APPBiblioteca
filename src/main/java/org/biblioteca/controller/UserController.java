@@ -34,7 +34,7 @@ public class UserController implements ActionListener {
         //this.view.addActionListener(this);
         this.view.userRegister.addActionListener(this);
         this.view.userType.addActionListener(this);
-        this.view.career.addActionListener(this);     
+        this.view.carreer.addActionListener(this);     
         start();
     }
 
@@ -46,7 +46,7 @@ public class UserController implements ActionListener {
 
     }
 
-        @Override
+    @Override
     public void actionPerformed(ActionEvent e) {
 
         if (e.getSource() == view.userRegister) {
@@ -64,14 +64,19 @@ public class UserController implements ActionListener {
                             ex.printStackTrace(); JOptionPane.showMessageDialog(null, "La identificación debe contener solo números."); 
                             return; // Salir del método si la identificación no es un número válido 
                         }
-                    
+                        
+                        int carreerIndex = view.carreer.getSelectedIndex();
+                        int idType = view.idType.getSelectedIndex();
+                        
                         model.setCode(code);
                         model.setName(view.name.getText());
                         model.setLastName(view.lastName.getText());                                 
-                        model.setIdentification(view.identification.getText());
-                        model.setCareer(view.career.getText());
+                        model.setIdentification(view.idType.getItemAt(idType) + view.identification.getText());
+                        model.setCareer(view.carreer.getItemAt(carreerIndex));
                         //model.setCareer(view.career.getSelectedIndex());
                         model.setType(view.userType.getSelectedIndex());
+                        model.setUsername(view.username.getText());
+                        model.setPassword(view.password.getText());
                     
                         {
                             if (querys.register(model)) {
@@ -87,11 +92,13 @@ public class UserController implements ActionListener {
 }
 
     private void clean() {
-         view.name.setText("");
+        view.name.setText("");
         view.lastName.setText("");
         view.identification.setText("");
-        view.career.setText("");
-       // view.career.setSelectedIndex(0);
+        view.carreer.setSelectedIndex(0);
+        view.username.setText("");
+        view.password.setText("");
+        view.idType.setSelectedIndex(0);
         view.userType.setSelectedIndex(0);
 
     }

@@ -6,22 +6,23 @@ import org.biblioteca.view.MainPage;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.JOptionPane;
+import org.biblioteca.model.UserConsults;
 
 public class LoginScreenController {
-    private LoginScreen ls;
-    // CREDENCIALES DE PRUEBA, CAMBIAR
-    String usr = "admin";
-    String pass = "1234";
+    private final LoginScreen ls;
+    private final UserConsults uc;
     
-    public LoginScreenController(LoginScreen ls) {
+    
+    public LoginScreenController(LoginScreen ls, UserConsults uc) {
         this.ls = ls;
+        this.uc = uc;
 
         this.ls.getJButtonLogin().addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 String enteredUser = ls.getJTextFieldUser().getText();
                 String enteredPassword = new String(ls.getJPasswordField().getPassword());
-                if (usr.equals(enteredUser) && pass.equals(enteredPassword)){
+                if (uc.validateLogin(enteredUser, enteredPassword)){
                     ls.dispose();
                     MainPage mp = new MainPage();
                     mp.setVisible(true);
