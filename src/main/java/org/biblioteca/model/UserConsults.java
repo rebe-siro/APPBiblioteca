@@ -9,21 +9,13 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-/**
- *
- * @author HP
- */
-public class UserConsults extends Conexion {
-    
-    public boolean register(User u) {
-        PreparedStatement ps = null;
-        Connection con = getConexion();
+public class UserConsults {
 
+    public boolean register(User u) {
         String sql = "INSERT INTO Usuario (code, name, lastname, identification, career, typeuser, status, password, username) VALUES(?,?,?,?,?,?,true,?,?)";
         
-        
-        try {
-            ps = con.prepareStatement(sql, PreparedStatement.RETURN_GENERATED_KEYS);
+        try (Connection con = Conexion.getConexion();
+             PreparedStatement ps = con.prepareStatement(sql, PreparedStatement.RETURN_GENERATED_KEYS)) {
             ps.setInt(1, u.getCode());
             ps.setString(2, u.getName());
             ps.setString(3, u.getLastName());
@@ -37,99 +29,43 @@ public class UserConsults extends Conexion {
         } catch (SQLException e) {
             System.err.println(e);
             return false;
-        } finally {
-            try {
-                con.close();
-            } catch (SQLException e) {
-                System.err.println(e);
-            }
         }
     }
     
     public ResultSet listUserType() {
-         PreparedStatement ps = null;
-        ResultSet rs = null;
-        Connection con = getConexion();
-        String sql = "";
-        
-        try {
-
-            ps = con.prepareStatement(sql);            
-            rs = ps.executeQuery();
-            return rs;
+        String sql = "SELECT * FROM tipo_usuario"; // Especifica la consulta SQL apropiada
+        try (Connection con = Conexion.getConexion();
+             PreparedStatement ps = con.prepareStatement(sql)) {
+            return ps.executeQuery();
         } catch (SQLException e) {
             System.err.println(e);
             return null;
-        } finally {
-            try {
-                con.close();
-            } catch (SQLException e) {
-                System.err.println(e);
-            }
         }
     }
     
     public ResultSet listCareer() {
-        PreparedStatement ps = null;
-        ResultSet rs = null;
-        Connection con = getConexion();
         String sql = "SELECT * FROM carrera";
-
-        try {
-            ps = con.prepareStatement(sql);            
-            rs = ps.executeQuery();
-            return rs;
+        try (Connection con = Conexion.getConexion();
+             PreparedStatement ps = con.prepareStatement(sql)) {
+            return ps.executeQuery();
         } catch (SQLException e) {
             System.err.println(e);
             return null;
-        } finally {
-            try {
-                con.close();
-            } catch (SQLException e) {
-                System.err.println(e);
-            }
         }
     }
     
-    public boolean validateLogin(String username, String password){
-        PreparedStatement ps = null;
-        ResultSet rs = null;
-        Connection con = getConexion();
-        
+    public boolean validateLogin(String username, String password) {
         String sql = "SELECT * FROM usuario WHERE username = ? AND password = ?";
-        
-       try{
-       
-           ps = con.prepareStatement(sql);
-           ps.setString(1, username);
-           ps.setString(2, password);
-           rs = ps.executeQuery();
-           
-           if (rs.next()){
-               return true;
-           } else{ 
-               return false;
-           } 
-           
-       }
-           catch (SQLException e) {
-                   
-                   System.err.println(e);
-                   return false;
-           } finally {
-            try {
-                if (rs != null) {
-                    rs.close();
-                }
-                if (ps != null) {
-                    ps.close();
-                }
-                con.clearWarnings();
-            } catch(SQLException e) {
-                
-                System.err.println(e);
+        try (Connection con = Conexion.getConexion();
+             PreparedStatement ps = con.prepareStatement(sql)) {
+            ps.setString(1, username);
+            ps.setString(2, password);
+            try (ResultSet rs = ps.executeQuery()) {
+                return rs.next();
             }
-                   
-                   }
+        } catch (SQLException e) {
+            System.err.println(e);
+            return false;
+        }
     }
 }
