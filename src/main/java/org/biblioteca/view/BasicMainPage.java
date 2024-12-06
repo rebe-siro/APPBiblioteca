@@ -322,9 +322,16 @@ public class BasicMainPage extends javax.swing.JFrame implements MainPage{
         SanctionsConsults querys = new SanctionsConsults();
         ApplySanctionController applysanction = new ApplySanctionController(model,querys,view);
         view.setVisible(true);
-
     }//GEN-LAST:event_jButtonAplicarSancionesMouseClicked
 
+    private void jButtonPosPrestamoMouseClicked(java.awt.event.MouseEvent evt){
+        ReturnView view = new ReturnView();
+        Return model = new Return();
+        ReturnConsults querys = new ReturnConsults();
+        ReturnsController returnC = new ReturnsController(model,querys,view);
+        view.setVisible(true);
+    }
+    
     private void jButtonReportesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonReportesActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jButtonReportesActionPerformed
@@ -334,7 +341,7 @@ public class BasicMainPage extends javax.swing.JFrame implements MainPage{
     }//GEN-LAST:event_jButtonCategoriaActionPerformed
 
     private void jButtonPosPrestamoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonPosPrestamoActionPerformed
-        // TODO add your handling code here:
+
     }//GEN-LAST:event_jButtonPosPrestamoActionPerformed
 
     /**
