@@ -55,6 +55,7 @@ public class ResourcesController implements ActionListener{
                     model.setAutor(view.jTextFieldAuthor.getText());                                 
                     model.setStatus(getStatus());
                     model.setType(view.jComboType.getSelectedIndex());
+                    model.setAvailable(Integer.parseInt(view.jTextFieldAvailable.getText()));
                     if (model.getType() == 0) {
                         JOptionPane.showMessageDialog(null, "Verifique el tipo de Recurso");
                         return;
@@ -64,6 +65,7 @@ public class ResourcesController implements ActionListener{
                         model.setAutor(view.jTextFieldAuthor.getText());                                 
                         model.setStatus(getStatus());
                         model.setType(view.jComboType.getSelectedIndex());
+                        model.setAvailable(Integer.parseInt(view.jTextFieldAvailable.getText()));
                         if (querys.save(model)) {
                             JOptionPane.showMessageDialog(null, "Recurso Guardado");
                             refreshTable();

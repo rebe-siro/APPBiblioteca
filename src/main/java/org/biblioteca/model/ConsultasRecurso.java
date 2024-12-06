@@ -23,7 +23,7 @@ public class ConsultasRecurso {
         PreparedStatement ps = null;
         Connection con = Conexion.getConexion();
 
-        String sql = "INSERT INTO recurso (code, title, author, type, status) VALUES(?,?,?,?,?)";
+        String sql = "INSERT INTO recurso (code, title, author, type, status, available) VALUES(?,?,?,?,?,?)";
 
         try {
             ps = con.prepareStatement(sql);
@@ -32,6 +32,7 @@ public class ConsultasRecurso {
             ps.setString(3, reso.getAutor());
             ps.setInt(4, reso.getType());
             ps.setBoolean(5, reso.isStatus());
+            ps.setInt(6, reso.getAvailable());            
             ps.execute();
             return true;
         } catch (SQLException e) {
@@ -50,7 +51,7 @@ public class ConsultasRecurso {
         PreparedStatement ps = null;
         Connection con = Conexion.getConexion();
 
-        String sql = "UPDATE recurso SET title=?, author=?, type=?, status=? WHERE code=? ";
+        String sql = "UPDATE recurso SET title=?, author=?, type=?, status=?, available=? WHERE code=? ";
 
         try {
             ps = con.prepareStatement(sql);
@@ -58,7 +59,8 @@ public class ConsultasRecurso {
             ps.setString(2, reso.getAutor());
             ps.setInt(3, reso.getType());
             ps.setBoolean(4, reso.isStatus());
-            ps.setInt(5, reso.getCode());
+            ps.setInt(5, reso.getAvailable());
+            ps.setInt(6, reso.getCode());
             ps.execute();
             return true;
         } catch (SQLException e) {
@@ -112,8 +114,9 @@ public class ConsultasRecurso {
                 reso.setCode(rs.getInt("code"));                
                 reso.setTitle(rs.getString("title"));
                 reso.setAutor(rs.getString("author"));
-              //  reso.setType(rs.getInt("tipo"));
-              //  reso.setStatus(rs.getBoolean("estatus"));   
+                reso.setType(rs.getInt("type"));
+                reso.setStatus(rs.getBoolean("status"));   
+                reso.setAvailable(rs.getInt("available"));   
                 return true;
             }
             return false;
@@ -133,7 +136,7 @@ public class ConsultasRecurso {
         PreparedStatement ps = null;
         ResultSet rs = null;
         Connection con = Conexion.getConexion();
-        String sql = "SELECT code as Código, title as Título, author as Autor, type as Tipo, status as Estatus "
+        String sql = "SELECT code as Código, title as Título, author as Autor, type as Tipo, status as Estatus, available as Disponible "
                     + " FROM recurso order by code asc";
 
         try {

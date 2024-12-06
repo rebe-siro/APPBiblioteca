@@ -19,7 +19,7 @@ public class ResourcesManager extends javax.swing.JFrame {
      */
     public ResourcesManager() {
         initComponents();
-        String ids [] = {"Código", "Título", "Autor", "Tipo", "Estatus"};
+        String ids [] = {"Código", "Título", "Autor", "Tipo", "Estatus", "Disponible"};
         dt.setColumnIdentifiers(ids);
         jTableResources.setModel(dt);        
 
@@ -50,6 +50,7 @@ public class ResourcesManager extends javax.swing.JFrame {
         jLabel8 = new javax.swing.JLabel();
         jComboBox4 = new javax.swing.JComboBox<>();
         jTextFieldAuthor = new javax.swing.JTextField();
+        jTextFieldAvailable = new javax.swing.JTextField();
         jPanel4 = new javax.swing.JPanel();
         jButtonSave = new javax.swing.JButton();
         jButtonClean = new javax.swing.JButton();
@@ -90,6 +91,8 @@ public class ResourcesManager extends javax.swing.JFrame {
 
         jComboBox4.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
+        jTextFieldAvailable.setText("0");
+
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
@@ -108,7 +111,9 @@ public class ResourcesManager extends javax.swing.JFrame {
                             .addComponent(jLabel7)
                             .addComponent(jComboType, 0, 224, Short.MAX_VALUE)
                             .addComponent(jComboBox4, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 137, Short.MAX_VALUE)
+                        .addGap(34, 34, 34)
+                        .addComponent(jTextFieldAvailable, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 42, Short.MAX_VALUE)
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jComboStatus, javax.swing.GroupLayout.PREFERRED_SIZE, 224, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
@@ -149,9 +154,10 @@ public class ResourcesManager extends javax.swing.JFrame {
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addComponent(jComboBox3, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 45, Short.MAX_VALUE)))
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jComboStatus, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jComboBox4, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jComboStatus, javax.swing.GroupLayout.DEFAULT_SIZE, 31, Short.MAX_VALUE)
+                    .addComponent(jComboBox4, javax.swing.GroupLayout.DEFAULT_SIZE, 31, Short.MAX_VALUE)
+                    .addComponent(jTextFieldAvailable)))
         );
 
         jButtonSave.setFont(new java.awt.Font("Segoe UI Semibold", 0, 11)); // NOI18N
@@ -291,8 +297,6 @@ public class ResourcesManager extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
-        jLabel6.getAccessibleContext().setAccessibleName("AUTORES");
-
         jToolBar2.setRollover(true);
 
         jButtonCancel.setText("REGRESAR");
@@ -354,7 +358,8 @@ public class ResourcesManager extends javax.swing.JFrame {
             jComboStatus.setSelectedIndex(0);
         } else {
             jComboStatus.setSelectedIndex(1);
-        }       
+        }
+        jTextFieldAvailable.setText(model.getValueAt(row, 5).toString());        
     }//GEN-LAST:event_jTableResourcesMouseClicked
 
     private void jButtonCancelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonCancelActionPerformed
@@ -425,6 +430,7 @@ public class ResourcesManager extends javax.swing.JFrame {
     public javax.swing.JTable jTableResources;
     public javax.swing.JTextField jTextFieldAuthor;
     private javax.swing.JComboBox<String> jTextFieldAuthor1;
+    public javax.swing.JTextField jTextFieldAvailable;
     public javax.swing.JTextField jTextFieldCode;
     public javax.swing.JTextField jTextFieldSearch;
     public javax.swing.JTextField jTextFieldTitle;

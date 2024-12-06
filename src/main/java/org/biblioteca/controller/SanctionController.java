@@ -9,7 +9,7 @@ import org.biblioteca.model.Sanctions;
 import java.awt.event.ActionListener;
 import javax.swing.JOptionPane;
 import org.biblioteca.view.SanctionView;
-import org.biblioteca.model.SanctionsConsults;
+//import org.biblioteca.model.SanctionsConsults;
     /* private LocalDate startDate = LocalDate.now();
     private LocalDate endDate = startDate.plusDays(7); */
 
@@ -17,20 +17,20 @@ import org.biblioteca.model.SanctionsConsults;
  *
  * @author Mary
  */
-public class SanctionController implements ActionListener{
+public class SanctionController /*implements ActionListener*/{
     
     private final Sanctions model;
-    private final SanctionsConsults querys; 
+    //private final SanctionsConsults querys; 
     private final SanctionView view;
     
-    public SanctionController(Sanctions model, SanctionsConsults querys, SanctionView view){
+    public SanctionController(Sanctions model, /*SanctionsConsults querys,*/ SanctionView view){
         this.model = model;
-        this.querys = querys;
+        //this.querys = querys;
         this.view = view;
-        this.view.jButtonSearchSanction.addActionListener(this);
+/*        this.view.jButtonSearchSanction.addActionListener(this);*/
         }
 
-    @Override
+    /* @Override
     public void actionPerformed(ActionEvent e) {
         if (e.getSource() == view.jButtonSearchSanction) {
             model.setCode(Integer.parseInt(view.TextFileIDEstudents.getText()));
@@ -43,8 +43,7 @@ public class SanctionController implements ActionListener{
                 JOptionPane.showMessageDialog(null, "El usuario no posee ninguna sancion.");
             }
         }
-    }
-    
+    }*/    
     
     
 }

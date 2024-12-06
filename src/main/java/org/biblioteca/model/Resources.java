@@ -15,17 +15,27 @@ public class Resources {
     private String autor;
     private int type;
     private boolean status;
+    private int available;
 
     public Resources(){
     };
 
-    public Resources(int code, String title, String description, String autor, int type, boolean status) {
+    public Resources(int code, String title, String description, String autor, int type, boolean status, int available) {
         this.code = code;
         this.title = title;
         this.description = description;
         this.autor = autor;
         this.type = type;
         this.status = status;
+        this.available = available;
+    }
+
+    public int getAvailable() {
+        return available;
+    }
+
+    public void setAvailable(int available) {
+        this.available = available;
     }
 
     public int getCode() {
