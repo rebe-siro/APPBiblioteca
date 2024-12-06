@@ -17,8 +17,10 @@ public class User {
     private String career;
     private int type;
     private boolean status;
+    private String password;
+    private String username;
 
-    public User(int code, String name, String lastName, String identification, String career, int type, boolean status) {
+    public User(int code, String name, String lastName, String identification, String career, int type, boolean status, String password, String username) {
         this.code = code;
         this.name = name;
         this.lastName = lastName;
@@ -26,6 +28,8 @@ public class User {
         this.career = career;
         this.type = type;
         this.status = status;
+        this.password = password;
+        this.username = username;
     }
 
     public User() {
@@ -88,7 +92,19 @@ public class User {
         this.status = status;
     }
 
+    public void setPassword(String password){
+        this.password = password;
+    }
+    
+    public String getPassword(){
+        return password;
+    }
   
-
+    public void setUsername(String username){
+        this.username = username;
+    }
    
+    public String getUsername(){
+        return username;
+    }
 }
