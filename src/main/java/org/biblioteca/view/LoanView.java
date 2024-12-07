@@ -123,6 +123,10 @@ public class LoanView extends javax.swing.JFrame {
         ));
         jScrollPane1.setViewportView(jTableResources);
 
+        jTextFieldStarDate.setEditable(false);
+
+        jTextFieldEndDate.setEditable(false);
+
         jComboBoxUserType.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccione", "Estudiante", "Profesor", "Externo" }));
 
         LabelLoanDate1.setText("Tipo de usuario");
